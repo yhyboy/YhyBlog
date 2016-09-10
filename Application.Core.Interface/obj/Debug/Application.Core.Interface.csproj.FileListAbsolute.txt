@@ -1,0 +1,4 @@
+D:\个人练习\YhBlog\Application.Core.Interface\bin\Debug\Application.Core.Interface.dll
+D:\个人练习\YhBlog\Application.Core.Interface\bin\Debug\Application.Core.Interface.pdb
+D:\个人练习\YhBlog\Application.Core.Interface\obj\Debug\Application.Core.Interface.dll
+D:\个人练习\YhBlog\Application.Core.Interface\obj\Debug\Application.Core.Interface.pdb

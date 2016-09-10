@@ -1,0 +1,32 @@
+﻿<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="panel-title"><span class="glyphicon glyphicon-list"></span> 栏目列表</div>
+    </div>
+    <div class="panel-body">
+        <ul id="categorytree" class="ztree" style="margin:0;padding:0"></ul>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //父栏目选择框 zTree
+        var zTreeCategory;
+        // zTree 的参数配置
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pId",
+                    rootPId: 0
+                },
+                key: {
+                    name: "name"
+                }
+            }
+        };
+        $.post("@Url.Action("Tree", "Category",new { showIcon=true })", null, function (data) {
+            zTreeCategory = $.fn.zTree.init($("#categorytree"), setting, data);
+        }, "json");
+
+    });
+</script>

@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
+}
+@section SideNav{@Html.Partial("_BlogSideNavPartial")}
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>博客管理</li>
+    <li class="active">@Html.ActionLink("博客列表", "Index")</li>
+</ol>
+<table id="blogtable"></table>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            initTable();          
+        });
+
+
+        //初始化表格
+        function initTable() {
+            $("#blogtable").bootstrapTable(
+                {
+                    // toolbar: "#toolbar",
+                    method: 'post',
+
+                    url: " @Url.Action("GetList")",
+
+                    // type: "json",
+
+                    sidePagination: "server", //服务端请求
+
+                    //contentType: "application/x-www-form-urlencoded",//必须的
+
+                    //height: $(window).height() - 200,
+
+                    striped: true,
+
+                    pagination: true,
+
+                    //  singleSelect: true,加上复选框出错
+
+                    pageSize: 10,
+
+                    pageList: [5, 10, 20],
+
+                    showRefresh: true,
+
+                    showFooter: true,
+                    clickToSelect: true, //是否启用点击选中行
+
+                    search: true, //显示 搜索框
+
+                    showColumns: true, //显示下拉框（选择显示的列）
+
+                    //queryParams: queryParams,
+
+                    columns: [
+                        { title: "编号", field: "ID" },
+                        { title: "标题", field: "Title" },
+                        { title: "所属类别", field: "Type" },
+                        { title: "浏览量", field: "Volume" },
+                        { title: "创建时间", field: "CreateTime", formatter: function (value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
+                        {
+                            title: "是否发布", field: "Publish", formatter: function (value) {
+                                if (value) {
+                                    return "<span class='label label-success'>已发布</span>";
+                                } else {
+                                    return "<span class='label label-default'>未发布</span>";
+                                }
+
+                            }
+                        },
+                             {
+                                 title: "修改", field: "ID", formatter: function (value) {
+                                     return "<a class='btn btn-sm btn-primary'  Onclick='editBlog_Btn(" + value + ")'  data-method='Delete' data-value=''>修改</a>";
+                                 }
+                             },
+                          {
+                              title: "删除", field: "ID", formatter: function (value) {
+                                  return "<a class='btn btn-sm btn-danger'  Onclick='deleteBlog_Btn(" + value + ")'  data-method='Delete' data-value=''>删除</a>";
+                              }
+                          }
+
+                    ]
+                }
+            );
+        }
+
+        function editBlog_Btn(value) {
+            window.open("/Control/Blog/ModifyBlog/" + value, "_blank");
+        }
+
+        function deleteBlog_Btn(value) {
+            BootstrapDialog.confirm("你确定要删除吗？", function (result) {
+                if (result) {
+                    $.post("@Url.Action("DeleteBlog", "Blog")", { id: value }, function (data) {
+                        if (data.Code == 1) {
+                            BootstrapDialog.show({
+                                message: "删除博客成功",
+                                buttons: [{
+                                    icon: "glyphicon glyphicon-ok",
+                                    label: "确定",
+                                    action: function (dialogItself) {
+                                        $("#blogtable").bootstrapTable("refresh");
+                                        dialogItself.close();
+                                    }
+                                }]
+
+                            });
+                        }
+                        else BootstrapDialog.alert(data.Message);
+                    }, "json");
+                }
+            });
+        }
+
+
+    </script>
+}

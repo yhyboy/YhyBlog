@@ -1,0 +1,214 @@
+﻿@{
+    ViewBag.Title = "主界面";
+    Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
+}
+@section SideNav{@Html.Partial("_AdminSideNavPartial")}
+
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>后台管理</li>
+    <li class="active">@Html.ActionLink("管理员", "Index")</li>
+</ol>
+
+
+<div id="toolbar" class="btn-group">
+    <button id="btn_add" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+    <button id="btn_resetpassword" class="btn btn-info"><span class="glyphicon glyphicon-lock"></span> 重置密码</button>
+    <button id="btn_del" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> 删除</button>
+</div>
+<table id="admintable"></table>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function() {
+            initTable();
+            addAdmin_Btn();
+            deleteAdmin_Btn();
+        });
+
+        //初始化表格
+        function initTable() {
+            $("#admintable").bootstrapTable(
+                {
+                    toolbar: "#toolbar",
+
+                    method: 'post',
+
+                    url: " @Url.Action("GetList")",
+
+                    // type: "json",
+
+                    sidePagination: "server", //服务端请求
+
+                    //contentType: "application/x-www-form-urlencoded",//必须的
+
+                    //height: $(window).height() - 200,
+
+                    striped: true,
+
+                    pagination: true,
+
+                    //  singleSelect: true,加上复选框出错
+
+                    pageSize: 10,
+
+                    pageList: [5, 10, 20],
+
+                    showRefresh: true,
+
+                    showFooter: true,
+                    clickToSelect: true, //是否启用点击选中行
+
+                    search: true, //显示 搜索框
+
+                    showColumns: true, //显示下拉框（选择显示的列）
+
+                    //queryParams: queryParams,
+
+                    columns: [
+                        { title: "state", checkbox: true },
+                        { title: "ID", field: "ID" },
+                        { title: "帐号", field: "Accounts" },
+                        { title: "登录时间", field: "LoginTime", formatter: function(value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
+                        { title: "登录IP", field: "LoginIP" },
+                        { title: "创建时间", field: "CreateTime", formatter: function(value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } }
+                    ]
+                }
+            );
+        }
+
+        //传递的参数 暂时不用
+        function queryParams(params) {
+
+            return {
+                pageSize: params.pageSize,
+
+                pageIndex: params.pageNumber,
+
+                UserName: $("#txtName").val(),
+
+                Birthday: $("#txtBirthday").val(),
+
+                Gender: $("#Gender").val(),
+
+                Address: $("#txtAddress").val(),
+
+                name: params.sortName,
+
+                order: params.sortOrder
+
+            };
+
+        }
+
+        //添加管理员
+        function addAdmin_Btn() {
+            $("#btn_add").click(function() {
+                var addDialog = new BootstrapDialog({
+                    title: "<span class='glyphicon glyphicon-plus'></span>添加管理员",
+                    message: function(dialog) {
+                        var $message = $('<div></div>');
+                        var pageToLoad = dialog.getData('pageToLoad');
+                        $message.load(pageToLoad);
+                        return $message;
+                    },
+                    data: {
+                        'pageToLoad': '@Url.Action("AddPartialView")'
+                    },
+                    buttons: [
+                        {
+                            icon: "glyphicon glyphicon-plus",
+                            label: "添加",
+                            action: function(dialogItself) {
+                                $.post(
+                                    $("form").attr("action"),
+                                    $("form").serializeArray(),
+                                    function(data) {
+                                        if (data.Code == 1) {
+                                            BootstrapDialog.show({
+                                                message: data.Message,
+                                                buttons: [
+                                                    {
+                                                        icon: "glyphicon glyphicon-ok",
+                                                        label: "确定",
+                                                        action: function(dialogItself) {
+                                                            $("#admintable").bootstrapTable("refresh");
+                                                            dialogItself.close();
+                                                            addDialog.close();
+                                                        }
+                                                    }
+                                                ]
+                                            });
+                                        } else {
+                                            BootstrapDialog.alert(data.Message);
+                                        }
+                                    }, "json");
+                                $("form").validate();
+                            }
+                        }, {
+                            icon: "glyphicon glyphicon-remove",
+                            label: "取消",
+                            action: function(dialogItself) {
+                                dialogItself.close();
+                            }
+                        }
+                    ]
+                });
+                addDialog.open();
+            });
+
+        }
+
+        //删除管理员
+        function deleteAdmin_Btn() {
+            $("#btn_del").click(function() {
+                var selected = $("#admintable").bootstrapTable('getSelections');
+                if ($(selected).length > 0) {
+                    BootstrapDialog.confirm("确定删除选中的" + $(selected).length + "位管理员", function(result) {
+                        if (result) {
+                            var ids="start";
+                           // var ids = new Array($(selected).length);
+                            $.each(selected, function(index, value) {
+                                // ids[index] = value.ID;
+                                ids += ",";
+                                ids += value.ID;
+                                
+                            });
+
+                            $.ajax({
+                                    type: "post",
+                                    url: "@Url.Action("DeletAdmin", "Admin")",
+                                data: { ids: ids },
+                                //contentType: "application/json",
+                                dataType:"json",
+                                    success: function(data) {
+                                        if (data.Code != 0) {
+                                            BootstrapDialog.show({
+                                                message: data.Message,
+                                                buttons: [
+                                                    {
+                                                        icon: "glyphicon glyphicon-ok",
+                                                        label: "确定",
+                                                        action: function(dialogItself) {
+                                                            $("#admintable").bootstrapTable("refresh");
+                                                            dialogItself.close();
+                                                        }
+                                                    }
+                                                ]
+
+                                            });
+                                        } else BootstrapDialog.alert(data.Message);
+                                    }
+                                }
+                            );
+                        }
+                    });
+                }
+            });
+        }
+
+        //重置密码
+        function resetPwd_Btn() {
+
+        }
+    </script>
+}

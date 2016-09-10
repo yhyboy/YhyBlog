@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+@section SideNav{@Html.Action("_HomeSideNavPartial", "Side")}
+
+
+<div class="panel panel-green-sea">
+    <div class="panel-heading" style="background-color: #B4EEB4; ">
+        <h2 class="panel-h1-title" style="color: #FFFFFF">
+            关于本站
+        </h2>
+    </div>
+    <div class="panel-body" >
+        <h2 style="color: #C2C2C2">   Just about me</h2>
+        <p style="color: #8b8378">
+            我是一个普通的开发者<br/>
+            我是一个普通的开发者<br/>
+            我是一个普通的开发者<br/>
+            我是一个普通的开发者<br/>
+            我是一个普通的开发者<br/>
+        </p>
+        <hr />
+        <h2 style="color: #C2C2C2"> About my blog</h2>
+        <div>
+            <p style="color: #8b8378">
+                技术参数：<br/>
+                ORM： EF<br/>
+                IOC： MEF<br/>
+                思想： DDD<br/>
+                开发语言： ASP.NET MVC(C#)<br/>
+                数据库： SqlServer 2010<br/>
+            </p>
+        </div>
+        <hr />
+        <h2 style="color: #C2C2C2">Code DownLoad</h2>
+        <div>
+            <p style="color: #8b8378">
+
+                博客代码： <a style="color: #FF8C00; font-weight: bold; font-size: 15px" href="#">下载地址</a><br/>
+                数据库文件：<a style="color: #FF8C00; font-weight: bold; font-size: 15px" href="#">下载地址</a><br/>
+            </p>
+        </div>
+
+        <hr />
+        <h2 style="color: #C2C2C2"> refer to</h2>
+        <div>
+            <p style="color: #8b8378">
+
+                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br/>
+                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br/>
+                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br />
+            </p>
+        </div>
+    </div>
+</div>

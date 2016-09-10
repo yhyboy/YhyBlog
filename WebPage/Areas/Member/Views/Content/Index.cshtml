@@ -1,0 +1,50 @@
+﻿@using Common
+@using Domain.Model.Blog
+@model Blog
+
+@{
+    ViewBag.Title = "主页";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+@section SideNav{@Html.Action("_HomeSideNavPartial","Side")}
+<div class="panel panel-default">
+    <div class="panel-body">
+        <ol class="breadcrumb">
+            <li><span class="glyphicon glyphicon-home"></span><a style="color: #EE6363; font-weight: bolder" href="@Html.Raw("/Member/Home/Index")"> @(((WebInfo)ViewBag.WebInfo).BlogName)</a></li>
+            <li class="active"><a style="color: #EE6363; font-weight: bolder;" href="@Html.Raw("/Member/Home/Index/" + Model.Category.ID)">@Model.Category.Name </a></li>
+            <li class="active"></li>
+        </ol>
+        <a href="@Html.Raw("/Member/Content/Index/" + Model.ID)">
+            <h3 style="font-weight: bolder"> @Model.Title </h3>
+        </a>
+        <div class="alert alert-success" role="alert">
+            <h4>简介</h4>
+            <p>
+                @Html.Raw(Model.Summary)
+            </p>
+        </div>
+        <div style="font-size: 20px">
+            @Html.Raw(Model.Content)
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    <div class="panel-footer">
+        <div style="color: #8B8378;">
+            &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text"/> @Model.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text"/> 浏览（@Model.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text"/>（206）
+        </div>
+    </div>
+    <div class="copyright alert alert-danger post-copyright">
+        <p>作者：@(((WebInfo)ViewBag.WebInfo).BlogName)</p>
+        <p>
+
+            原文地址：&nbsp;<a href="#">本站</a>
+        </p>
+        <p>
+            版权归属：&nbsp;<a href="#">@(((WebInfo)ViewBag.WebInfo).BlogName) &nbsp; </a> 转载时请以链接形式注明出处
+        </p>
+    </div>
+
+</div>
+

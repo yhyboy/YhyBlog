@@ -1,0 +1,147 @@
+﻿@using Domain.Model.Blog
+@model List<LeaveMsg>
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+@section SideNav{
+    <img id="Msg_IMG" src="~/BlogImg/1473176746_192072.png" class="img-circle" style="float: right" />
+}
+<script src="~/Content/mansory/mp.mansory.min.js"></script>
+<link href="~/Content/mansory/style.css" rel="stylesheet" />
+
+<style type="text/css">
+    .item {
+        border-color: #d6e9c6;
+        text-align: center;
+        padding: 25px;
+    }
+
+    p {
+        font-weight: bolder;
+    }
+</style>
+
+@{
+
+    List<string> color_item = new List<string>();
+    color_item.Add("#FFDAB9");
+    color_item.Add("#FAEBD7");
+    color_item.Add("#EE9A00");
+    color_item.Add("#EE4000");
+    color_item.Add("#CDCD00");
+    color_item.Add("#CD1076");
+    color_item.Add("#B452CD");
+    color_item.Add("#A3A3A3");
+    color_item.Add("#00CD66");
+    color_item.Add("#6B8E23");
+    color_item.Add("#6A5ACD");
+    color_item.Add("#6CA6CD");
+
+
+    List<string> color_p = new List<string>();
+    color_p.Add("#6C7B8B");
+    color_p.Add("#5C5C5C");
+    color_p.Add("#32CD32");
+    color_p.Add("#00F5FF");
+    color_p.Add("#B23AEE");
+    color_p.Add("#9A32CD");
+    color_p.Add("#DB7093");
+    color_p.Add("#EEC591");
+
+
+
+}
+
+<div class="container">
+
+    <div class="" id="my-gallery-container">
+        @{
+            foreach (var item in Model)
+            {
+                <div class="item" data-order="@item.ID" style=" background-color: @(color_item.OrderBy(_ => Guid.NewGuid()).First()) ">
+            <p style=" color: @color_p.OrderBy(_ => Guid.NewGuid()).First() ">
+                    @item.Msg
+                    </p>
+                    - by @item.User.Name
+                </div>
+            }
+        }
+
+    </div>
+
+
+</div>
+
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $("#my-gallery-container").mpmansory(
+            {
+                childrenClass: 'item', // default is a div
+                columnClasses: 'padding', //add classes to items
+                breakpoints: {
+                    lg: 3,
+                    md: 4,
+                    sm: 6,
+                    xs: 12
+                },
+                distributeBy: { order: false, height: false, attr: 'data-order', attrOrder: 'asc' }, //default distribute by order, options => order: true/false, height: true/false, attr => 'data-order', attrOrder=> 'asc'/'desc'
+                onload: function (items) {
+                    //make somthing with items
+                }
+            }
+        );
+
+        //留言
+        var Msg_IMG = $("#Msg_IMG");
+        Msg_IMG.click(function () {
+            var addDialog = new BootstrapDialog({
+                title: "<span class='glyphicon glyphicon-plus'></span>留言",
+                message: function (dialog) {
+                    var $message = $('<div></div>');
+                    var pageToLoad = dialog.getData('pageToLoad');
+                    $message.load(pageToLoad);
+                    return $message;
+                },
+                data: {
+                    'pageToLoad': '@Url.Action("DoLeaveMsg")'
+                }, buttons: [{
+                    icon: "glyphicon glyphicon-plus",
+                    label: "添加",
+                    action: function (dialogItself) {
+                        if ($("form").valid()) {
+                            $.post($("form").attr("action"), $("form").serializeArray(), function (data) {
+                                if (data.Code == 1) {
+                                    BootstrapDialog.show({
+                                        message: data.Message,
+                                        buttons: [{
+                                            icon: "glyphicon glyphicon-ok",
+                                            label: "确定",
+                                            action: function (dialogItself) {
+                                                $("#roletable").bootstrapTable("refresh");
+                                                dialogItself.close();
+                                                addDialog.close();
+                                                location.reload(true);
+                                            }
+                                        }]
+
+                                    });
+                                }
+                                else BootstrapDialog.alert(data.Message);
+                            }, "json");
+                        }
+                    }
+                }, {
+                    icon: "glyphicon glyphicon-remove",
+                    label: "取消",
+                    action: function (dialogItself) {
+                        dialogItself.close();
+                    }
+                }]
+            });
+            addDialog.open();
+        });
+    });
+
+</script>

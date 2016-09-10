@@ -1,0 +1,5 @@
+D:\个人练习\YhBlog\Application.Core\bin\Debug\Application.Core.dll
+D:\个人练习\YhBlog\Application.Core\bin\Debug\Application.Core.pdb
+D:\个人练习\YhBlog\Application.Core\obj\Debug\Application.Core.csprojResolveAssemblyReference.cache
+D:\个人练习\YhBlog\Application.Core\obj\Debug\Application.Core.dll
+D:\个人练习\YhBlog\Application.Core\obj\Debug\Application.Core.pdb

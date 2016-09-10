@@ -1,0 +1,104 @@
+﻿@using Domain.Model.Blog
+@using Domain.Model.Category
+@model List<Category>
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <div class="panel-title"><span class="glyphicon glyphicon-user"></span> yhyboy
+        </div>
+    </div>
+    <div class="panel-body" style="padding: 10px; font-size: 15px; line-height: 1.5;">
+        <div>
+            <div style="width: 150px; text-align: center; font-size: 14px; float: left;">
+                <img id="wxlook" class="img-responsive" style="margin-right: 5px" width="145" height="145" alt="微信扫一扫" title="打开微信扫一扫" src="~/BlogImg/MyWx.png" data-bd-imgshare-binded="1">
+                微信扫一扫
+            </div>
+            <div style="text-indent: 2em;">
+                <p>
+                    这是一个程序员的独立博客站，主要用于分享与编程技术相关的内容，
+                    同时这里也是博主记录工作学习中遇到的问题及其解决方案的地方。
+                    PS:YHYBOY:非著名程序员，IT界的一名小学生。目前在研究网络舆情、复杂网络、机器学习等...
+                    更多信息请点击：<a target="_blank" href="/About" style="color: #1abc9c">关于本站.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-danger">
+    <div class="panel-heading">
+        <h3 class="panel-title">阅读排行</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group list-group-flush">
+            @{
+                foreach (Blog item in ViewBag.ReadBlog)
+                {
+                    <a style="font-weight: bolder" href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title  <span style="font-weight: bolder">(@item.Volume)</span></a>
+                }
+            }
+        </ul>
+
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h3 class="panel-title">栏目</h3>
+    </div>
+    <div class="panel-body">
+        <div class="panel-group">
+            @{
+                foreach (var item in Model)
+                {
+                    if (item.Depth == 0)
+                    {
+                        @Html.Raw(LanMu(item))
+                    }
+                }
+            }
+            @functions {
+
+                public  IHtmlString LanMu(Category category)
+                {
+                    
+                    if (Model.Where(c => c.ParentID == category.ID).Count() <= 0 && category.Depth!=0)
+                    {
+                        return @Html.Raw(" <li><a href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>");
+                    }
+
+                    {
+                        string str = " <div class='panel panel-info'> <div class='panel-heading' data-toggle='collapse' data-parent='#accordion2' href='#" + @category.ID + "'> <a class='accordion-toggle'>" + @category.Name + "</a> </div> <div id='"+@category.ID+"' class='panel-collapse collapse' style='height: 0px;'>  <div class='panel-body'>  <ul class='nav nav-pills nav-stacked'>";
+                        str+=" <li><a href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>";
+                           foreach (var item2 in Model)
+                                            {
+                                                if (item2.ParentID == category.ID)
+                                                {
+                                                    str += LanMu(item2);
+                                                }
+                                            }
+                        str += " </ul> </div> </div> </div>";
+                        return @Html.Raw(str);
+                    }
+                }
+            }
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h3 class="panel-title">新随笔</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group list-group-flush">
+            <a href="#" class="list-group-item">示例 待完成 <span class="badge">置顶</span></a>
+            @{
+    foreach (Blog item in ViewBag.NewBlog)
+    {
+        <a style="font-weight: bolder" href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title </a>
+    }
+}
+        </ul>
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\Infrastructure.Core.dll
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\Infrastructure.Core.pdb
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\Common.dll
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\Common.pdb
+D:\个人练习\YhBlog\Infrastructure.Core\obj\Debug\Infrastructure.Core.csprojResolveAssemblyReference.cache
+D:\个人练习\YhBlog\Infrastructure.Core\obj\Debug\Infrastructure.Core.dll
+D:\个人练习\YhBlog\Infrastructure.Core\obj\Debug\Infrastructure.Core.pdb
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\log4net.dll
+D:\个人练习\YhBlog\Infrastructure.Core\bin\Debug\log4net.xml

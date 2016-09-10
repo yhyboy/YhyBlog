@@ -1,0 +1,65 @@
+﻿@using System.Collections
+@using WebPage.Areas.Control.Models
+@model AddUserViewModel
+@using (@Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+      @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(u => u.Username, new {@class = "col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(u => u.Username,  new {@class = "form-control"})
+                @Html.ValidationMessageFor(u => u.Username, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.RoleID, new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(u=>u.RoleID,(IEnumerable<SelectListItem> )ViewBag.select_roles, new { @class = "form-control"})
+                @Html.ValidationMessageFor(u => u.RoleID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(u => u.Sex, new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(u => u.Sex, 1,new {@class="selected"}) 男
+                @Html.RadioButtonFor(u => u.Sex, 0) 女
+                @Html.RadioButtonFor(u => u.Sex, 2)保密
+                @Html.ValidationMessageFor(u => u.Sex, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        
+        <div class="form-group">
+            @Html.LabelFor(u => u.Name, new {@class = "col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(u => u.Name, new {@class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Name, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Password, new {@class = "col-md-2"})
+            <div class="col-md-10">
+                @Html.PasswordFor(u => u.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Password, "", new {@class = "text-danger"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.ConfirmPassword, new {@class = "col-md-2"})
+            <div class="col-md-10">
+                @Html.PasswordFor(u => u.ConfirmPassword, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.ConfirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(u => u.Email, new {@class = "col-md-2"})
+            <div class="col-md-10">
+                @Html.TextBoxFor(u => u.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(u => u.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </div>
+
+}

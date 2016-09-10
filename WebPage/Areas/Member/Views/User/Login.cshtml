@@ -1,0 +1,42 @@
+﻿@using WebPage.Areas.Control.Models
+@model global::WebPage.Areas.Member.Models.LoginModel_Me
+
+@{
+    ViewBag.Title = "登录";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    @Styles.Render("~/Content/Control")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    <div class="loginform">
+        <div class="form-horizontal">
+            <h2 class="text-primary">登录</h2>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group form-group-lg">
+                    @Html.TextBoxFor(model => model.Username, new { @class = "form-control", placeholder = "帐号" })
+                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group form-group-lg">
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "密码" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group form-group-lg">
+                    <input type="submit" value="登录" class="btn btn-default pull-right"/>
+                    <a href="@Url.Action("Register","User")" class="btn btn-default pull-right">注册</a> 
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>

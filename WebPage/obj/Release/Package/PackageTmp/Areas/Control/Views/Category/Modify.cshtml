@@ -1,0 +1,176 @@
+﻿@using Domain.Model.Category
+@model Category
+@{
+    ViewBag.Title = "修改栏目";
+    Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
+}
+@section SideNav{@Html.Partial("_CategorySideNavPartial")}
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>  @Html.ActionLink("首页", "Index", "Home")</li>
+    <li>@Html.ActionLink("栏目管理", "Index", "Category")</li>
+    <li class="active">修改栏目</li>
+</ol>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+            <li role="presentation"><a href="#base" role="tab" data-toggle="tab" aria-controls="base">基本资料</a></li>
+            <li id="tabadvanced" role="presentation"><a href="#advanced" role="tab" data-toggle="tab" aria-controls="advanced">高级设置</a></li>
+        </ul>
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="base">
+                <br />
+                <br />
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ParentID, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.HiddenFor(model => model.ParentID)
+                        <div class="input-group" style="width:280px">
+                            <input id="ParentName" type="text" class="form-control" readonly />
+                            <ul class="dropdown-menu dropdown-menu-left ztree" style="display:none;width:100%" id="parenttree"></ul>
+                            <div class="input-group-btn open">
+                                <button id="btn-CategoryID" type="button" class="btn btn-default"><span class="caret"></span></button>
+                            </div>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Type, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <select class="form-control valid" data-val="true" data-val-required="栏目类型必填" id="Type" name="Type" aria-required="true" aria-describedby="Type-error" aria-invalid="false">
+                            <option selected="selected" value="0">常规栏目</option>
+                            <option value="1">单页栏目</option>
+                            <option value="2">外部链接</option>
+                        </select>
+                        @Html.ValidationMessageFor(model => model.Type, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Description, new { @class = "form-control" } )
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Order, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Order,  new { @class = "form-control"  })
+                        @Html.ValidationMessageFor(model => model.Order, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Target, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.Target,new { @class = "form-control"  })
+                        @Html.ValidationMessageFor(model => model.Target, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="advanced">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="保存" class="btn btn-default" />
+                <a href="#" data-method="Delete" data-value="@Model.ID" class="btn btn-danger">删除</a>
+            </div>
+        </div>
+    </div>
+}
+<script type="text/javascript">
+    //显示隐藏标签页
+    function showTabBySelect() {
+        switch ($("#Type").find("option:selected").text()) {
+            case "常规栏目":
+                $("#advanced").load("@Url.Action("ModifyGeneral",new { id= Model.ID })");
+                break;
+            case "单页栏目":
+                $("#advanced").load("@Url.Action("ModifyPage", new { id = Model.ID })");
+                break;
+            case "外部链接":
+                $("#advanced").load("@Url.Action("ModifyLink", new { id = Model.ID })");
+                break;
+        }
+    }
+    $(document).ready(function () {
+        showTabBySelect();
+        $("#Type").change(function () {
+            showTabBySelect();
+        });
+        //父栏目选择框 zTree
+        var zTreeObj;
+        // zTree 的参数配置
+        var setting = {
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pId",
+                    rootPId: 0
+                },
+                key: {
+                    name: "name"
+                }
+            },
+            callback: {
+                onClick: function (event, treeId, treeNode) {
+                    $("#ParentID").val(treeNode.id);
+                    $("#ParentName").val(treeNode.name);
+                    $("#parenttree").slideUp();
+                }
+            }
+        };
+        // zTree 的数据属性，
+        $.post("@Url.Action("DropdownTree")", null, function (data) {
+            zTreeObj = $.fn.zTree.init($("#parenttree"), setting, data);
+            var newNode = { name: "无", id: "0", pId: "-1" };
+            newNode = zTreeObj.addNodes(null, 0, newNode);
+            var node = zTreeObj.getNodeByParam("id", $("#ParentID").val(), null);
+            if (node != null) {
+                $("#ParentName").val(node.name);
+                zTreeObj.selectNode(node);
+            }
+        }, "json");
+
+    });
+    $("#btn-CategoryID").click(function () { $("#parenttree").slideDown(); });
+    //父栏目选择框 zTree 结束
+    //删除
+    $("a[data-method='Delete']").click(function () {
+        var id = $(this).attr("data-value");
+        BootstrapDialog.confirm("你确定要删除栏目【@Model.Name】吗？", function (result) {
+            if (result) {
+                $.post("@Url.Action("Delete", "Category")", { id: id }, function (data) {
+                    if (data.Code == 1) {
+                        BootstrapDialog.show({
+                            message: "删除栏目成功",
+                            buttons: [{
+                                icon: "glyphicon glyphicon-ok",
+                                label: "确定",
+                                action: function (dialogItself) {
+                                    dialogItself.close();
+                                    document.location.href = "@Url.Action("Index","Category")";
+                                }
+                            }]
+
+                        });
+                    }
+                    else BootstrapDialog.alert(data.Message);
+                }, "json");
+            }
+        });
+    });
+    //删除结束
+</script>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-WebPage-20160816111529.mdf;Initial Catalog=aspnet-WebPage-20160816111529;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\个人练习\\YhBlog\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="YhDeboke-Web.config Connection String" description="YhDeboke 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="Data Source=.;Database=wodeboke;UID=sa;PWD=123456;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\个人练习\\YhBlog\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='YhDeboke']/@connectionString" />
+  </parameter>
+</parameters>

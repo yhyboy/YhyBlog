@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/jquery.ztree.all.min.js")
+}
+@section style{
+    @Styles.Render("~/Content/zTree/metroStyle/metroStyle.css")
+}
+@section SideNav{@Html.Partial("_CategorySideNavPartial")}
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>  @Html.ActionLink("首页", "Index", "Home")</li>
+    <li class="active">@Html.ActionLink("栏目管理", "Index", "Category")</li>
+</ol>

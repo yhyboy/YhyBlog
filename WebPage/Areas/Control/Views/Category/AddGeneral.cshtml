@@ -1,0 +1,27 @@
+﻿@using Domain.Model.Category
+@model CategoryGeneral
+<br />
+<br />
+<div class="form-group">
+    @Html.LabelFor(model => model.View, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.View, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.View, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ContentTypeID, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownListFor(model => model.ContentTypeID, (IEnumerable<SelectListItem>)ViewBag.ContentTypeItems, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.ContentTypeID, "", new { @class = "text-danger" })
+    </div>
+</div>
+<div class="form-group">
+    @Html.LabelFor(model => model.ContentView, htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.ContentView, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.ContentView, "", new { @class = "text-danger" })
+    </div>
+</div>
+
+

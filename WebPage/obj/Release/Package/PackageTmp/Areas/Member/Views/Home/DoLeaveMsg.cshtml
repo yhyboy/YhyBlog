@@ -1,0 +1,18 @@
+﻿@using Domain.Model
+@model Domain.Model.Blog.LeaveMsg
+
+@using (Html.BeginForm("DoLeaveMsg", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Msg, new { @class = "col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Msg, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Msg, "", new { @class = "text-danger" })
+            </div>
+        </div>       
+    </div>
+
+}
+
