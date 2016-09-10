@@ -1,10 +1,4 @@
-﻿/*==============================
-版本：v0.1
-创建：2016.3.2
-作者：洞庭夕照
-博客:http://mzwhj.cnblogs.com
-==============================*/
-using System.Web;
+﻿using System.Web;
 using System.Web.Optimization;
 
 namespace WebPage
