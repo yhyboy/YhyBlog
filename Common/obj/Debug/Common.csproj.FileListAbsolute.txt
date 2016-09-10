@@ -7,3 +7,12 @@ D:\个人练习\YhBlog\Common\bin\Debug\log4net.dll
 D:\个人练习\YhBlog\Common\bin\Debug\log4net.xml
 D:\个人练习\YhBlog\Common\bin\Debug\Newtonsoft.Json.dll
 D:\个人练习\YhBlog\Common\bin\Debug\Newtonsoft.Json.xml
+D:\git\www\blog\Common\bin\Debug\Common.dll
+D:\git\www\blog\Common\bin\Debug\Common.pdb
+D:\git\www\blog\Common\bin\Debug\log4net.dll
+D:\git\www\blog\Common\bin\Debug\Newtonsoft.Json.dll
+D:\git\www\blog\Common\bin\Debug\log4net.xml
+D:\git\www\blog\Common\bin\Debug\Newtonsoft.Json.xml
+D:\git\www\blog\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+D:\git\www\blog\Common\obj\Debug\Common.dll
+D:\git\www\blog\Common\obj\Debug\Common.pdb

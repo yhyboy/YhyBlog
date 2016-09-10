@@ -19,8 +19,8 @@
         @*置顶*@
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title" style="font-weight: bold;">
-                    <button type="button" class="btn btn-info" style="color: beige">~置顶</button>
+                <h3 class="panel-title" style="font-weight: bold;">                  
+                    <a type="button" href="@Html.Raw("/Member/Content/Index/"+((Blog)ViewBag.TopBlog).ID)" class="btn btn-success" style="color: beige">置 顶</a>
                     <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/"+((Blog)ViewBag.TopBlog).ID)">@(((Blog)ViewBag.TopBlog).Title)</a>
                 </h3>
             </div>
@@ -50,7 +50,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title" style="font-weight: bold;">
-                            <button type="button" class="btn btn-success" style="color: beige">@item.Category.Name</button>
+                            <a type="button" href="@Html.Raw("/Member/Home/Index/" + @item.Category.ID + "?pageindex=1")" class="btn btn-success" style="color: beige">@item.Category.Name</a>
                             <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/" + item.ID)">@item.Title</a>
                         </h3>
                     </div>

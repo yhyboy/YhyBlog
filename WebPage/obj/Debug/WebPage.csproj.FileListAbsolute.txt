@@ -246,3 +246,4 @@ D:\git\www\blog\WebPage\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.res
 D:\git\www\blog\WebPage\obj\Debug\WebPage.csprojResolveAssemblyReference.cache
 D:\git\www\blog\WebPage\obj\Debug\WebPage.dll
 D:\git\www\blog\WebPage\obj\Debug\WebPage.pdb
+D:\git\www\blog\WebPage\bin\Config\BlogConfig.xml

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigHelper.cs" />
     <Compile Include="CryptHelper\AESCrypt.cs" />
     <Compile Include="CustomCon.cs" />
     <Compile Include="Log\ExtLogImpl.cs" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,10 @@ namespace Domain.Model.Blog
 
  
         [Display(Name = "用户")]
+        [ForeignKey("UserId")]
         public virtual User.User User { get; set; }
 
+        public int UserId { get; set; }
 
     }
 }

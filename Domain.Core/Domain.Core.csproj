@@ -61,6 +61,7 @@
     <Compile Include="User\AdminManager.cs" />
     <Compile Include="User\RoleManager.cs" />
     <Compile Include="User\UserManager.cs" />
+    <Compile Include="WebConfigManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

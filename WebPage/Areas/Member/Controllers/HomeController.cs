@@ -12,6 +12,7 @@ using Domain.Core.Category;
 using Domain.Core.Interface;
 using Domain.Core.Interface.ICategory;
 using Domain.Core.User;
+using Domain.Model;
 using Domain.Model.Blog;
 using Domain.Model.Category;
 
@@ -24,6 +25,8 @@ namespace WebPage.Areas.Member.Controllers
         private IBlogManager blogManager;
         [Import]
         private ILeaveMsgManager leaveMsgManager;
+
+        private WebConfigManager webConfigManager=new WebConfigManager();
         //
         // GET: /Member/Home/
         public ActionResult Index(int? pageindex, int id = -1)
@@ -69,8 +72,9 @@ namespace WebPage.Areas.Member.Controllers
             #endregion
 
             #region 置顶博客
-            var TopBlog = blogManager.Find(webInfo.TopBlog);
+            var TopBlog = blogManager.Find(webConfigManager.GetConfig().TopBlog);
             ViewBag.TopBlog = TopBlog;
+
             #endregion
 
             return View(page.Items);
@@ -87,7 +91,8 @@ namespace WebPage.Areas.Member.Controllers
             ViewBag.WebInfo = webInfo;
             #endregion
 
-            return View();
+           BlogConfig blogConfig= webConfigManager.GetConfig();
+           return View(blogConfig);
         }
         public ActionResult LeaveMsg()
         {
@@ -125,7 +130,7 @@ namespace WebPage.Areas.Member.Controllers
                 Domain.Model.User.User user = new UserManager().Find(Convert.ToInt32(CurrUser.UserID));
                 if (user == null)
                 {
-                    response.Message = "必须是登录用户才能留言";
+                    response.Message = "必须是注册前台用户才能留言";
                     return Json(response);
                 }
                 Domain.Model.Blog.LeaveMsg leaveMsg = new LeaveMsg();

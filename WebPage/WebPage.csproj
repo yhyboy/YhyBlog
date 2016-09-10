@@ -291,6 +291,9 @@
     <Content Include="BlogImg\31674132_39.jpg" />
     <Content Include="BlogImg\MyWx.png" />
     <Content Include="BlogImg\u=1817164915,4043312701&amp;fm=21&amp;gp=0.jpg" />
+    <Content Include="Config\BlogConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-dialog.css" />
@@ -730,7 +733,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Control\Views\Home\" />
     <Folder Include="Areas\Member\Views\Side\" />
-    <Folder Include="Config\" />
     <Folder Include="Content\img\diy\" />
     <Folder Include="ueditor\net\upload\" />
     <Folder Include="ueditor\upload\file\" />
