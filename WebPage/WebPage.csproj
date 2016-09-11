@@ -677,6 +677,7 @@
     <Content Include="Areas\Member\Views\Home\LeaveMsg.cshtml" />
     <Content Include="Areas\Member\Views\Home\DoLeaveMsg.cshtml" />
     <Content Include="Areas\Member\Views\User\Login.cshtml" />
+    <Content Include="wx2.png" />
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
