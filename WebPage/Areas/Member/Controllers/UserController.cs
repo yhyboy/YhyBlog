@@ -40,6 +40,7 @@ namespace WebPage.Areas.Member.Controllers
         [HttpPost]
         public ActionResult Login(LoginModel_Me loginViewModel)
         {
+       
             #region 网站设置
             CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
             WebInfo webInfo = custom.WebInfo;
@@ -53,7 +54,7 @@ namespace WebPage.Areas.Member.Controllers
                 if (_response.Code == 1)
                 {
                     User user = (User)_response.Data;
-                    CurrUser.Serialize(user.ID, user.Name);
+                    CurrUser.Serialize(user.ID, user.Username);
                     return RedirectToAction("Index", "Home", new { Areas = "Member" });
                 }
                 else if (_response.Code == 2) ModelState.AddModelError("Accounts", _response.Message);

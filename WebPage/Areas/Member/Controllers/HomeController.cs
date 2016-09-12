@@ -72,6 +72,7 @@ namespace WebPage.Areas.Member.Controllers
             #endregion
 
             #region 置顶博客
+         
             var TopBlog = blogManager.Find(webConfigManager.GetConfig().TopBlog);
             ViewBag.TopBlog = TopBlog;
 
@@ -108,6 +109,7 @@ namespace WebPage.Areas.Member.Controllers
 
         public ActionResult DoLeaveMsg()
         {
+    
             if (!CurrUser.IsLogin)
             {
                 return Json("必须是登录用户才能留言", JsonRequestBehavior.AllowGet);

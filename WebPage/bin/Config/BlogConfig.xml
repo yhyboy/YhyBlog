@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BlogConfig>
-  <TopBlog>36</TopBlog>
+  <TopBlog>20</TopBlog>
   <Link>
     <LinkItem>
       <Href>
@@ -44,10 +44,7 @@
     </LinkItem>
   </Link>
   <MyInfo>
-    我是一个普通的开发者
-    我是一个普通的开发者
-    我是一个普通的开发者
-    我是一个普通的开发者
-    我是一个普通的开发者
+
+  这不是一个分享文章的正经博客，是我作为练手项目的一个博客，主要目的是通过博客的开发过程更好的掌握Asp.Net的各项技术点。如果您感兴趣可以下载代码。如果您有问题可以在留言板上留言。另外，本来想写上打赏功能，但是由我这个博客开发的比较简单估计没人打赏就算了~~
   </MyInfo>
 </BlogConfig>

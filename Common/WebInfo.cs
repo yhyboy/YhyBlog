@@ -17,12 +17,12 @@ namespace Common
            get { return this["BlogName"].ToString(); }
            set { this["BlogName"] = value; }
        }
-       [ConfigurationProperty("TopBlog", IsRequired = true)]
-       public int TopBlog
-       {
-           get { return Convert.ToInt32(this["TopBlog"]); }
-           set { this["TopBlog"] = value; }
-       }
+       //[ConfigurationProperty("TopBlog", IsRequired = true)]
+       //public int TopBlog
+       //{
+       //    get { return Convert.ToInt32(this["TopBlog"]); }
+       //    set { this["TopBlog"] = value; }
+       //}
        [ConfigurationProperty("CallMe", IsRequired = true)]
        public string CallMe
        {

@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using WebPage.Filter;
 
 namespace WebPage
 {
@@ -7,7 +8,7 @@ namespace WebPage
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new ExceptionAttribute());
         }
     }
 }

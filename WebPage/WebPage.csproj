@@ -248,6 +248,7 @@
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Areas\Member\Models\LoginModel_Me.cs" />
     <Compile Include="Areas\Member\Models\RegisterViewModel.cs" />
+    <Compile Include="Filter\ExceptionAttribute.cs" />
     <Compile Include="Odt\Configuration.cs" />
     <Compile Include="Odt\Profiles\AddBlog_Blog.cs" />
     <Compile Include="Odt\Profiles\AddUser_User.cs" />
@@ -325,6 +326,7 @@
     <Content Include="Content\Switch\docs\js\highlight.js" />
     <Content Include="Content\Switch\docs\js\jquery.min.js" />
     <Content Include="Content\Switch\docs\js\main.js" />
+    <Content Include="Error.html" />
     <Content Include="lib\AutoMapper.dll" />
     <Content Include="ueditor\dialogs\anchor\anchor.html" />
     <Content Include="ueditor\dialogs\attachment\attachment.css" />

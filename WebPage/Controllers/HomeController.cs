@@ -40,9 +40,13 @@ namespace WebPage.Controllers
             //string s6 = map2.S6;
             //string s2 = map2.S2;
             // return Json("map2.s6=" + s6 + "    map2.s2=" + s2, JsonRequestBehavior.AllowGet);
-            /// <summary>
-            /// 当前程序根目录
-            /// </summary>
+
+
+            // throw  new Exception("666");
+
+
+            // 当前程序根目录
+          
             string RootPath = System.AppDomain.CurrentDomain.BaseDirectory;
             string path = RootPath + @"/Config/BlogConfig.xml";
             //加载
