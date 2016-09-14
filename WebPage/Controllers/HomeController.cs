@@ -47,16 +47,17 @@ namespace WebPage.Controllers
 
             // 当前程序根目录
           
-            string RootPath = System.AppDomain.CurrentDomain.BaseDirectory;
-            string path = RootPath + @"/Config/BlogConfig.xml";
-            //加载
-            XElement root = XElement.Load(path);
-            string roots = "加载:" + root.ToString();
+            //string RootPath = System.AppDomain.CurrentDomain.BaseDirectory;
+            //string path = RootPath + @"/Config/BlogConfig.xml";
+            ////加载
+            //XElement root = XElement.Load(path);
+            //string roots = "加载:" + root.ToString();
         
-            var ele = root.Element("TopBlog");
-            ele.SetValue("20");
-            root.Save(path);  
-            return Json(ele.Value, JsonRequestBehavior.AllowGet);
+            //var ele = root.Element("TopBlog");
+            //ele.SetValue("20");
+            //root.Save(path);  
+           // return Json(ele.Value, JsonRequestBehavior.AllowGet);
+            return View();
         }
 
         public ActionResult About()

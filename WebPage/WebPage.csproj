@@ -292,9 +292,7 @@
     <Content Include="BlogImg\31674132_39.jpg" />
     <Content Include="BlogImg\MyWx.png" />
     <Content Include="BlogImg\u=1817164915,4043312701&amp;fm=21&amp;gp=0.jpg" />
-    <Content Include="Config\BlogConfig.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <EmbeddedResource Include="Config\BlogConfig.xml" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-dialog.css" />
