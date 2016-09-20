@@ -272,6 +272,7 @@
     <Compile Include="Odt\Profiles\ModifyBlog_Blog.cs" />
     <Compile Include="Odt\Test.cs" />
     <Compile Include="Other\MefDependencySolver.cs" />
+    <Compile Include="Test1.cs" />
     <Compile Include="Test\BaseTest.cs" />
     <Compile Include="Test\IMefTest.cs" />
     <Compile Include="Test\IMefTest1.cs" />
