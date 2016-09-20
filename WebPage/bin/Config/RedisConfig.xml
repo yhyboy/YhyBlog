@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<redis>
+  <item>
+    <ip>
+      127.0.0.1
+    </ip>
+    <port>
+      6379
+    </port>
+  </item>
+  
+</redis>

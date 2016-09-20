@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BlogConfig>
+  <TopBlog>41</TopBlog>
+  <Link>
+    <LinkItem>
+      <Href>
+        http://www.cnblogs.com/mzwhj/p/5183779.html
+      </Href>
+      <LinkName>
+        洞庭夕照博客园MVC5网站开发
+      </LinkName>
+    </LinkItem>
+    <LinkItem>
+      <Href>
+        http://www.cnblogs.com/xishuai/p/ddd-repository-iunitofwork-and-idbcontext.html
+      </Href>
+      <LinkName>
+        DDD 领域驱动设计－谈谈 Repository、IUnitOfWork 和 IDbContext 的实践（1）
+      </LinkName>
+    </LinkItem>
+    <LinkItem>
+      <Href>
+        http://www.cnblogs.com/xishuai/p/ddd-repository-iunitofwork-and-idbcontext-part-2.html
+      </Href>
+      <LinkName>
+        DDD 领域驱动设计－谈谈 Repository、IUnitOfWork 和 IDbContext 的实践（2）
+      </LinkName>
+    </LinkItem>
+    <LinkItem>
+      <Href>
+        http://www.cnblogs.com/guomingfeng/archive/2013/05/21/mvc-ioc-mef.html
+      </Href>
+      <LinkName>
+        MVC实用架构设计（二）——使用MEF应用IOC（依赖倒置）-郭明锋
+      </LinkName>
+    </LinkItem>
+    <LinkItem>
+      <Href>
+        http://www.cnblogs.com/
+      </Href>
+      <LinkName>
+        .............
+      </LinkName>
+    </LinkItem>
+  </Link>
+  <MyInfo>
+
+  这不是一个分享文章的正经博客，是我作为练手项目的一个博客，主要目的是通过博客的开发过程更好的掌握Asp.Net的各项技术点。如果您感兴趣可以下载代码。如果您有问题可以在留言板上留言。另外，本来想写上打赏功能，但是由我这个博客开发的比较简单估计没人打赏就算了~~
+  </MyInfo>
+</BlogConfig>
