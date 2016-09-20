@@ -8,5 +8,7 @@ namespace WebPage
     public class Test1
     {
         public string Type { get; set; }
+
+        public string 分支 { get; set; }
     }
 }
