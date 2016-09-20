@@ -7,5 +7,6 @@ namespace WebPage
 {
     public class Test1
     {
+        public string Type { get; set; }
     }
 }
