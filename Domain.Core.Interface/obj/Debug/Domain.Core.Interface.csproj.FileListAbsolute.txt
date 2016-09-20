@@ -38,3 +38,8 @@ D:\git\www\blog\Domain.Core.Interface\bin\Debug\zh-Hans\EntityFramework.resource
 D:\git\www\blog\Domain.Core.Interface\obj\Debug\Domain.Core.Interface.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Domain.Core.Interface\obj\Debug\Domain.Core.Interface.dll
 D:\git\www\blog\Domain.Core.Interface\obj\Debug\Domain.Core.Interface.pdb
+D:\git\www\blog\Domain.Core.Interface\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Domain.Core.Interface\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Domain.Core.Interface\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Domain.Core.Interface\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Domain.Core.Interface\bin\Debug\ServiceStack.Text.xml

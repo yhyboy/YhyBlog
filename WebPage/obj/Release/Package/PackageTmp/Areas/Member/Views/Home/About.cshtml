@@ -1,4 +1,5 @@
-﻿
+﻿@using Domain.Model
+@model BlogConfig
 @{
     ViewBag.Title = "About";
     Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
@@ -9,49 +10,52 @@
 <div class="panel panel-green-sea">
     <div class="panel-heading" style="background-color: #B4EEB4; ">
         <h2 class="panel-h1-title" style="color: #FFFFFF">
-            关于本站
+            关于本站！
         </h2>
     </div>
-    <div class="panel-body" >
-        <h2 style="color: #C2C2C2">   Just about me</h2>
+    <div class="panel-body">
+        <img style="float: left" src="~/wx2.png" />
+        <h2 style="color: #C2C2C2"> 关于我</h2>
         <p style="color: #8b8378">
-            我是一个普通的开发者<br/>
-            我是一个普通的开发者<br/>
-            我是一个普通的开发者<br/>
-            我是一个普通的开发者<br/>
-            我是一个普通的开发者<br/>
+            @Model.MyInfo
         </p>
-        <hr />
-        <h2 style="color: #C2C2C2"> About my blog</h2>
+        <hr/>
+        <h2 style="color: #C2C2C2"> 关于技术</h2>
         <div>
             <p style="color: #8b8378">
                 技术参数：<br/>
-                ORM： EF<br/>
+                ORM： Entity Framework 6<br/>
                 IOC： MEF<br/>
-                思想： DDD<br/>
-                开发语言： ASP.NET MVC(C#)<br/>
-                数据库： SqlServer 2010<br/>
+                思想： 伪DDD<br/>
+                日志：log4net<br/>
+                Odt：AutoMapper<br/>
+                开发语言： ASP.NET MVC5(C#) .net4.5<br/>
+                数据库： SqlServer 2008<br/>
+                搭建平台： 阿里云虚拟云主机<br/>
             </p>
         </div>
-        <hr />
-        <h2 style="color: #C2C2C2">Code DownLoad</h2>
+        <hr/>
+        <h2 style="color: #C2C2C2">代码下载</h2>
         <div>
             <p style="color: #8b8378">
 
-                博客代码： <a style="color: #FF8C00; font-weight: bold; font-size: 15px" href="#">下载地址</a><br/>
-                数据库文件：<a style="color: #FF8C00; font-weight: bold; font-size: 15px" href="#">下载地址</a><br/>
+                博客代码（GitHub）： <a style="color: #FF8C00; font-weight: bold; font-size: 15px" target="_Blank" href="https://github.com/yhyboy/YhyBlog">https://github.com/yhyboy/YhyBlog-我的GitHub</a><br/>
+                数据库文件：<a style="color: #FF8C00; font-weight: bold; font-size: 15px" target="_Blank" href="#">使用CodeFrist 无需</a><br/>
             </p>
         </div>
 
-        <hr />
-        <h2 style="color: #C2C2C2"> refer to</h2>
+        <hr/>
+        <h2 style="color: #C2C2C2"> 参考资料</h2>
         <div>
             <p style="color: #8b8378">
-
-                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br/>
-                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br/>
-                <a style="color: #AB82FF; font-weight: bold; font-size: 15px" href="#">参考地址</a><br />
+                @{
+                    foreach (var link in Model.Links)
+                    {
+                        <a style="color: #AB82FF; font-weight: bold; font-size: 15px" target="_Blank" href="@link.Href">@link.LinkName</a><br/>
+                    }
+                }
             </p>
         </div>
+        <hr/>
     </div>
 </div>

@@ -38,3 +38,8 @@ D:\git\www\blog\Infrastructure.Factory\bin\Debug\zh-Hans\EntityFramework.SqlServ
 D:\git\www\blog\Infrastructure.Factory\obj\Debug\Infrastructure.Factory.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Infrastructure.Factory\obj\Debug\Infrastructure.Factory.dll
 D:\git\www\blog\Infrastructure.Factory\obj\Debug\Infrastructure.Factory.pdb
+D:\git\www\blog\Infrastructure.Factory\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Infrastructure.Factory\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Infrastructure.Factory\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Infrastructure.Factory\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Infrastructure.Factory\bin\Debug\ServiceStack.Text.xml

@@ -20,21 +20,20 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-     body {
-            background-image: url("/BlogImg/1-140HZ92044.jpg");
-            background-repeat: no-repeat;
-            background-size: cover;
+        body {
+            background: #E8E8E8;
+            font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
         }
     </style>
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top" style="background: #545454 !important;">
+    <div class="navbar navbar-default navbar-fixed-top" style="background: #3B3B3B !important;">
         <div id="Timg"></div>
         <div class="container">
             <div class="navbar-header">
-                <span style="font-weight: bold; font-size: 30px; color: #7AC5CD">@(((WebInfo)ViewBag.WebInfo).BlogName) _Blog</span>&nbsp;&nbsp;&nbsp;
+                <span style="font-weight: bold; font-size: 30px; color: #FFFFFF;">@(((WebInfo) ViewBag.WebInfo).BlogName) </span>&nbsp;&nbsp;&nbsp;<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  <span style="font-weight: bold; font-size: 15px; color: #FFFFFF;">-生活不止有眼前的苟且，还有未来的诗和苟且 </span>;
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -72,8 +71,8 @@
     </div>
     <div class="container body-content">
         <div class="row">
-            <div class="col-lg-8 col-md-8 col-sm-8">@RenderBody()</div>
-            <div class="col-lg-4 col-md-4 col-sm-4">@RenderSection("SideNav", false)</div>
+            <div class="col-lg-9 ">@RenderBody()</div>
+            <div class="col-lg-3 ">@RenderSection("SideNav", false)</div>
         </div>
         <hr />
         <footer id="zyn-footer">

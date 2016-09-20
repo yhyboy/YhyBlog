@@ -16,3 +16,10 @@ D:\git\www\blog\Common\bin\Debug\Newtonsoft.Json.xml
 D:\git\www\blog\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Common\obj\Debug\Common.dll
 D:\git\www\blog\Common\obj\Debug\Common.pdb
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Common.dll
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Common.xml
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Common\bin\Debug\ServiceStack.Text.xml

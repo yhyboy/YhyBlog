@@ -50,3 +50,8 @@ D:\git\www\blog\Domain.Core\bin\Debug\zh-Hans\EntityFramework.SqlServer.resource
 D:\git\www\blog\Domain.Core\obj\Debug\Domain.Core.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Domain.Core\obj\Debug\Domain.Core.dll
 D:\git\www\blog\Domain.Core\obj\Debug\Domain.Core.pdb
+D:\git\www\blog\Domain.Core\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Domain.Core\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Domain.Core\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Domain.Core\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Domain.Core\bin\Debug\ServiceStack.Text.xml

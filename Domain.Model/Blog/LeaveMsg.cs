@@ -24,10 +24,10 @@ namespace Domain.Model.Blog
 
  
         [Display(Name = "用户")]
-        [ForeignKey("UserId")]
+        [ForeignKey("User_Id")]
         public virtual User.User User { get; set; }
 
-        public int UserId { get; set; }
+        public int User_Id { get; set; }
 
     }
 }

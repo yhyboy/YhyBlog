@@ -4,6 +4,7 @@
 @{
     ViewBag.Title = "About";
     Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+    
 }
 @section SideNav{
     <img id="Msg_IMG" src="~/BlogImg/1473176746_192072.png" class="img-circle" style="float: right" />
@@ -17,7 +18,6 @@
         text-align: center;
         padding: 25px;
     }
-
     p {
         font-weight: bolder;
     }
@@ -61,7 +61,7 @@
             foreach (var item in Model)
             {
                 <div class="item" data-order="@item.ID" style=" background-color: @(color_item.OrderBy(_ => Guid.NewGuid()).First()) ">
-            <p style=" color: @color_p.OrderBy(_ => Guid.NewGuid()).First() ">
+                      <p style=" color: @color_p.OrderBy(_ => Guid.NewGuid()).First()">
                     @item.Msg
                     </p>
                     - by @item.User.Name

@@ -246,3 +246,12 @@ D:\git\www\blog\WebPage\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.res
 D:\git\www\blog\WebPage\obj\Debug\WebPage.csprojResolveAssemblyReference.cache
 D:\git\www\blog\WebPage\obj\Debug\WebPage.dll
 D:\git\www\blog\WebPage\obj\Debug\WebPage.pdb
+D:\git\www\blog\WebPage\bin\Config\BlogConfig.xml
+D:\git\www\blog\WebPage\bin\ServiceStack.Common.dll
+D:\git\www\blog\WebPage\bin\ServiceStack.Interfaces.dll
+D:\git\www\blog\WebPage\bin\ServiceStack.Redis.dll
+D:\git\www\blog\WebPage\bin\ServiceStack.Text.dll
+D:\git\www\blog\WebPage\bin\ServiceStack.Common.xml
+D:\git\www\blog\WebPage\bin\ServiceStack.Redis.xml
+D:\git\www\blog\WebPage\bin\ServiceStack.Text.xml
+D:\git\www\blog\WebPage\bin\Config\RedisConfig.xml

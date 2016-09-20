@@ -38,3 +38,8 @@ D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\zh-Hans\EntityFramewor
 D:\git\www\blog\Infrastructure.Core.Data.Entity\obj\Debug\Infrastructure.Core.Data.Entity.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Infrastructure.Core.Data.Entity\obj\Debug\Infrastructure.Core.Data.Entity.dll
 D:\git\www\blog\Infrastructure.Core.Data.Entity\obj\Debug\Infrastructure.Core.Data.Entity.pdb
+D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Infrastructure.Core.Data.Entity\bin\Debug\ServiceStack.Text.xml

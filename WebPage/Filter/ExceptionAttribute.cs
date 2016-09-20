@@ -25,9 +25,12 @@ namespace WebPage.Filter
             {
                 string controllerName = (string)filterContext.RouteData.Values["controller"];
                 string actionName = (string)filterContext.RouteData.Values["action"];
-                log.Error(Utils.GetIP(), CurrUser.UserName, "", controllerName + "/" + actionName, filterContext.Exception.Message);
+                string msg = filterContext.Exception.Message +
+                (string.IsNullOrEmpty(filterContext.Exception.InnerException.Message) ?
+                             "" : filterContext.Exception.InnerException.Message);
+                log.Error(Utils.GetIP(), CurrUser.UserName, "", controllerName + "/" + actionName, msg);
             }
-       
+
             if (filterContext.HttpContext.Request.IsAjaxRequest())
             {
                 Response response = new Response();
@@ -35,9 +38,10 @@ namespace WebPage.Filter
                 response.Message = "服务器出现异常,请联系管理员查看日志！";
                 //filterContext.Result = new JsonResult() { Data = response };
                 string re = "{Code:0,Message:'服务器出现异常,请联系管理员查看日志！'}";
+                filterContext.HttpContext.Response.ContentType = "application/json";
                 filterContext.HttpContext.Response.Write(re);
                 filterContext.HttpContext.Response.Flush();
-                   filterContext.HttpContext.Response.End();
+                filterContext.HttpContext.Response.End();
                 //filterContext.HttpContext.Response.
             }
             else

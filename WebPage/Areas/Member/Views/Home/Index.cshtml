@@ -39,7 +39,7 @@
                         </div>
                         <div>
                             <div style="color: #8B8378;">
-                                &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @(((Blog)ViewBag.TopBlog).CreateTime) <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@(((Blog)ViewBag.TopBlog).Volume)）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
+                               &nbsp;<img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @(((Blog)ViewBag.TopBlog).CreateTime) <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@(((Blog)ViewBag.TopBlog).Volume)）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
                             </div>
                             <br />
                             <a href="@Html.Raw("/Member/Content/Index/" + ((Blog) ViewBag.TopBlog).ID)" style="float: right; color: #008B8B;">继续阅读>></a>
@@ -70,8 +70,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title" style="font-weight: bold;">
-                            <a type="button" href="@Html.Raw("/Member/Home/Index/" + @item.Category.ID + "?pageindex=1")" class="btn btn-success" style="color: beige">@item.Category.Name</a>
-                            <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/" + item.ID)">@item.Title</a>
+                            <a type="button" href="@Html.Raw("/Member/Home/Index/" + @item.Category.ID + "?pageindex=1")" class="btn btn-info" style="color: beige">@item.Category.Name</a>
+                            &nbsp; <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/" + item.ID)">@item.Title</a>
                         </h3>
                     </div>
                     <div class="panel-body">
@@ -85,7 +85,7 @@
                         <div>
                             <hr />
                             <div style="color: #8B8378;">
-                                &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @item.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@item.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
+                                &nbsp; <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @item.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@item.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
                             </div>
                             <a href="@Html.Raw("/Member/Content/Index/" + item.ID)" style="float: right; color: #008B8B;">继续阅读>></a>
                         </div>

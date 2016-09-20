@@ -1,8 +1,77 @@
-﻿
+﻿@using Domain.Model
+@model  BlogConfig
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
 }
 @section SideNav{@Html.Partial("_ConfigSideNavPartial")}
 
+<div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(m => m.TopBlog, new { @class = "col-md-2" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(model => model.TopBlog, new { @class = "form-control" })
+            <a id="T_btn" type="button" class="btn btn-success" style="color: beige">修改</a>
+            @Html.ValidationMessageFor(model => model.TopBlog, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.MyInfo, new { @class = "col-md-2" })
+        <div class="col-md-10">
+            @Html.TextAreaFor(model => model.MyInfo, new { @class = "form-control", style = "height: 150px" })
+            <a id="I_btn" type="button" class="btn btn-success" style="color: beige">修改</a>
+            @Html.ValidationMessageFor(model => model.MyInfo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Links, new { @class = "col-md-2" })
+        <div class="col-md-10">
+            @{
+                foreach (var link in Model.Links)
+                {
+                    <div class="form-group">
+                        1
+                        <div class="col-md-10">
+                            名称 : @link.LinkName 链接 : <a target="_blank" href="@link.Href">@link.Href</a>
+                            <hr />
+                        </div>
+                    </div>
+                }
+            }
+            <span style="color: red">链接需要修改在配置文件中自行修改</span>
 
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    jQuery(document).ready(function () {
+        $("#T_btn").click(function () {
+            var TopBlog_Id = $("#TopBlog").val();
+            $.post("@Url.Action("TopBlog", "WebConfig")"
+        , { id: TopBlog_Id }, function (data) {
+            if (data.Code == 1) {
+                alert("OK");
+                location.reload(true);
+            } else {
+                alert(data.Message);
+            }
+        });
+        });
+
+        $("#I_btn").click(function () {
+            var MyInfo_I = $("#MyInfo").val();
+            $.post("@Url.Action("MyInfo", "WebConfig")"
+        , { MyInfo: MyInfo_I }, function (data) {
+            if (data.Code == 1) {
+                alert("OK");
+                location.reload(true);
+            } else {
+                alert(data.Message);
+            }
+        });
+
+        });
+    });
+
+</script>

@@ -16,32 +16,52 @@
 </head>
 <body>
     <div>
-        @*置顶*@
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title" style="font-weight: bold;">
-                    <button type="button" class="btn btn-info" style="color: beige">~置顶</button>
-                    <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/"+((Blog)ViewBag.TopBlog).ID)">@(((Blog)ViewBag.TopBlog).Title)</a>
-                </h3>
-            </div>
-            <div class="panel-body"><br />
-                <div style="color: #8B8378;">
-                    <div class="alert alert-success" role="alert">
-                        <h4>简介</h4>  
-                        <p>
-                            @Html.Raw(((Blog) ViewBag.TopBlog).Summary)
-                        </p>
+        @{
+            if ((Blog)ViewBag.TopBlog != null)
+            {
+                @*置顶*@
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-weight: bold;">
+                            <a type="button" href="@Html.Raw("/Member/Content/Index/" + ((Blog) ViewBag.TopBlog).ID)" class="btn btn-success" style="color: beige">置 顶</a>
+                            <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/" + ((Blog) ViewBag.TopBlog).ID)">@(((Blog)ViewBag.TopBlog).Title)</a>
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <br />
+                        <div style="color: #8B8378;">
+                            <div class="alert alert-success" role="alert">
+                                <h4>简介</h4>
+                                <p>
+                                    @Html.Raw(((Blog)ViewBag.TopBlog).Summary)
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="color: #8B8378;">
+                                &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @(((Blog)ViewBag.TopBlog).CreateTime) <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@(((Blog)ViewBag.TopBlog).Volume)）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
+                            </div>
+                            <br />
+                            <a href="@Html.Raw("/Member/Content/Index/" + ((Blog) ViewBag.TopBlog).ID)" style="float: right; color: #008B8B;">继续阅读>></a>
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div style="color: #8B8378;">
-                        &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @(((Blog)ViewBag.TopBlog).CreateTime) <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@(((Blog)ViewBag.TopBlog).Volume)）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
+            }
+            else
+            {
+  <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="font-weight: bold;">
+                            <a type="button" href="#" class="btn btn-success" style="color: beige">置 顶</a>
+                            <a style='color: #5CACEE;' href="#">暂无置顶</a>
+                        </h3>
                     </div>
-                    <br/>
-                    <a href="@Html.Raw("/Member/Content/Index/"+((Blog)ViewBag.TopBlog).ID)" style="float: right; color: #008B8B;">继续阅读>></a>
+           
                 </div>
-            </div>
-        </div>
+            }
+
+        }
+
         @*内容*@
         @{
             foreach (var item in Model)
@@ -50,14 +70,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title" style="font-weight: bold;">
-                            <button type="button" class="btn btn-success" style="color: beige">@item.Category.Name</button>
+                            <a type="button" href="@Html.Raw("/Member/Home/Index/" + @item.Category.ID + "?pageindex=1")" class="btn btn-success" style="color: beige">@item.Category.Name</a>
                             <a style='color: #5CACEE;' href="@Html.Raw("/Member/Content/Index/" + item.ID)">@item.Title</a>
                         </h3>
                     </div>
                     <div class="panel-body">
                         <br />
                         <div style="color: #8B8378;">
-                            <h4>简介</h4>  
+                            <h4>简介</h4>
                             <p>
                                 @Html.Raw(@item.Summary)
                             </p>
@@ -65,7 +85,7 @@
                         <div>
                             <hr />
                             <div style="color: #8B8378;">
-                                &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text"/> @item.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text"/> 浏览（@item.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text"/>（206）
+                                &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @item.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@item.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
                             </div>
                             <a href="@Html.Raw("/Member/Content/Index/" + item.ID)" style="float: right; color: #008B8B;">继续阅读>></a>
                         </div>
@@ -78,12 +98,12 @@
         @*分页*@
         <nav>
             <ul class="pagination pagination" style="float: right;">
-             @Html.Raw(ViewBag.Page)
+                @Html.Raw(ViewBag.Page)
             </ul>
         </nav>
         当前页 @ViewBag.PageIndex
         共 @ViewBag.PageCount 页
-      
+
     </div>
 </body>
 </html>

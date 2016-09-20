@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<div>
+
+    @{
+        foreach (var item in (Dictionary<string, string>)ViewBag.value)
+        {
+            <span>键：@item.Key</span>
+            <span>值：@item.Value</span><br/>
+        <hr/>
+        
+        }
+    }
+
+    <h3 style="color: red"> Hash:</h3>  **************************************************************************************************<br/>
+ 
+    @{
+
+        foreach (var item in ViewBag.Hash)
+        {
+            <hr/>         
+            foreach (var VARIABLE in item)
+            {
+                 @VARIABLE
+           <br/>
+            }
+         
+        }
+    }
+
+    <h3 style="color: red">List:</h3> **************************************************************************************************<br />
+    
+    <br />
+    @{
+
+        foreach (var item in ViewBag.List)
+        {
+                @item
+                 <br/>
+        }
+    }
+    <hr />
+
+    <br />
+    @{
+
+        foreach (var item in ViewBag.List2)
+        {
+            @item
+            <br />
+        }
+    }
+    <hr />
+  
+</div>
+</body>
+</html>

@@ -39,3 +39,9 @@ D:\git\www\blog\Domain.Model\obj\Debug\Domain.Model.csproj.GenerateResource.Cach
 D:\git\www\blog\Domain.Model\obj\Debug\Domain.Model.dll
 D:\git\www\blog\Domain.Model\obj\Debug\Domain.Model.pdb
 D:\git\www\blog\Domain.Model\obj\Debug\Domain.Model.Migrations._910.resources
+D:\git\www\blog\Domain.Model\obj\Debug\Domain.Model.Migrations._915.resources
+D:\git\www\blog\Domain.Model\bin\Debug\ServiceStack.Redis.dll
+D:\git\www\blog\Domain.Model\bin\Debug\ServiceStack.Interfaces.dll
+D:\git\www\blog\Domain.Model\bin\Debug\ServiceStack.Text.dll
+D:\git\www\blog\Domain.Model\bin\Debug\ServiceStack.Redis.xml
+D:\git\www\blog\Domain.Model\bin\Debug\ServiceStack.Text.xml
