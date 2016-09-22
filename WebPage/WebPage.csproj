@@ -264,6 +264,7 @@
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Areas\Member\Models\LoginModel_Me.cs" />
     <Compile Include="Areas\Member\Models\RegisterViewModel.cs" />
+    <Compile Include="Controllers\LinqController.cs" />
     <Compile Include="Controllers\RedisTestController.cs" />
     <Compile Include="Filter\ExceptionAttribute.cs" />
     <Compile Include="Odt\Configuration.cs" />
@@ -761,6 +762,7 @@
     <Folder Include="Content\img\diy\" />
     <Folder Include="ueditor\net\upload\" />
     <Folder Include="ueditor\upload\file\" />
+    <Folder Include="Views\Linq\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -21,3 +21,17 @@ D:\git\www\blog\Infrastructure.Core\bin\Debug\ServiceStack.Interfaces.dll
 D:\git\www\blog\Infrastructure.Core\bin\Debug\ServiceStack.Text.dll
 D:\git\www\blog\Infrastructure.Core\bin\Debug\ServiceStack.Redis.xml
 D:\git\www\blog\Infrastructure.Core\bin\Debug\ServiceStack.Text.xml
+D:\vsgit\Infrastructure.Core\bin\Debug\Infrastructure.Core.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\Infrastructure.Core.pdb
+D:\vsgit\Infrastructure.Core\bin\Debug\Common.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\log4net.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\ServiceStack.Redis.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\ServiceStack.Interfaces.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\ServiceStack.Text.dll
+D:\vsgit\Infrastructure.Core\bin\Debug\Common.pdb
+D:\vsgit\Infrastructure.Core\bin\Debug\log4net.xml
+D:\vsgit\Infrastructure.Core\bin\Debug\ServiceStack.Redis.xml
+D:\vsgit\Infrastructure.Core\bin\Debug\ServiceStack.Text.xml
+D:\vsgit\Infrastructure.Core\obj\Debug\Infrastructure.Core.csprojResolveAssemblyReference.cache
+D:\vsgit\Infrastructure.Core\obj\Debug\Infrastructure.Core.dll
+D:\vsgit\Infrastructure.Core\obj\Debug\Infrastructure.Core.pdb
