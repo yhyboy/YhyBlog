@@ -11,6 +11,13 @@
     @RenderSection("style", required: false)
     @Scripts.Render("~/bundles/Control")
     @RenderSection("scripts", required: false)
+   
+    <script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="/Content/weather/weather.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/Content/neon/css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/neon/css/htmleaf-demo.css">
+    <link type="text/css" rel="stylesheet" href="/Content/neon/css/style.css" />
 
     <style type="text/css">
         #Timg {
@@ -27,50 +34,60 @@
     </style>
 </head>
 <body>
-    <div class="navbar navbar-default navbar-fixed-top" style="background: #3B3B3B !important;">
-        <div id="Timg"></div>
-        <div class="container">
-            <div class="navbar-header">
-                <span style="font-weight: bold; font-size: 30px; color: #FFFFFF;">@(((WebInfo) ViewBag.WebInfo).BlogName) </span>&nbsp;&nbsp;&nbsp;<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  <span style="font-weight: bold; font-size: 15px; color: #FFFFFF;">-生活不止有眼前的苟且，还有未来的诗和苟且 </span>;
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+<div class="navbar navbar-default navbar-fixed-top" style="background: #3B3B3B !important;">
+    <div id="Timg"></div>
+    <div class="container">
+        <div class="navbar-header">
+            <span class="neon-logo" style="font-weight: bold; font-size: 30px; color: #FFFFFF;">@(((WebInfo)ViewBag.WebInfo).BlogName) </span>&nbsp;&nbsp;&nbsp;<br/>
+            &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <span style="font-weight: bold; font-size: 15px; color: #FFFFFF;">-生活不止有眼前的苟且，还有未来的诗和苟且 </span>;
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-            </div>
-            <div style="font-size: 20px; font-weight: bold; float: right" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a style="color: #FFFFF0" href="/Member/Home/Index"><span class="glyphicon glyphicon-home"></span> 主页 </a>
-                    </li>
-                    <li class="dropdown">
-                        <a style="color: #FFFFF0" href="/Member/Home/About"><span class="glyphicon glyphicon-tasks"></span> 关于</a>
-                    </li>
-                    <li class="dropdown">
-                        <a style="color: #FFFFF0" href="/Member/Home/LeaveMsg"><span class="glyphicon glyphicon-heart-empty"></span> 留言 </a>
-                    </li>
+        </div>
+        <div style="font-size: 20px; font-weight: bold; float: right" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="neon-1" style="color: #FFFFF0" href="/Member/Home/Index"><span class="glyphicon glyphicon-home"></span> 主页 </a>
+                </li>
+                <li class="dropdown">
+                    <a class="neon-1" style="color: #FFFFF0" href="/Member/Home/About"><span class="glyphicon glyphicon-tasks"></span> 关于</a>
+                </li>
+                <li class="dropdown">
+                    <a class="neon-1" style="color: #FFFFF0" href="/Member/Home/LeaveMsg"><span class="glyphicon glyphicon-heart-empty"></span> 留言 </a>
+                </li>
 
-                    @{
-                        if (CurrUser.IsLogin)
-                        {
-                            <li class="dropdown">
-                                <a style="color: #FFFFF0" href="/Member/Home/Out" ><span class=" glyphicon glyphicon-hand-left"></span>登出 <span style="font-size: 8px">@CurrUser.UserName</span>          </a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="dropdown">
-                                <a style="color: #FFFFF0" href="/Member/User/Login"><span class="glyphicon glyphicon-hand-right"></span> 登录 </a>
-                            </li>
-                        }
+                @{
+                    if (CurrUser.IsLogin)
+                    {
+                        <li class="dropdown">
+                            <a class="neon-1" style="color: #FFFFF0" href="/Member/Home/Out"><span class=" glyphicon glyphicon-hand-left"></span>登出 <span style="font-size: 8px">@CurrUser.UserName</span>          </a>
+                        </li>
                     }
-                </ul>
-            </div>
+                    else
+                    {
+                        <li class="dropdown">
+                            <a class="neon-1" style="color: #FFFFF0" href="/Member/User/Login"><span class="glyphicon glyphicon-hand-right"></span> 登录 </a>
+                        </li>
+                    }
+                }
+            </ul>
         </div>
     </div>
+</div>
+<br/>
+<br/>
+<br/>
+    <br />
     <div class="container body-content">
-        <div class="row">
+        <div class="row" >
+            <div class="welcome-info" style="margin-left:20px;">
+                <div><span id="weather" style="color: #36648B; font-size: 15px; "></span></div>
+            </div>
+            <script type="text/javascript">
+                $('#weather').leoweather({ format: '{时段}好！，<span id="colock">现在时间是：<strong >{年}年{月}月{日}日 星期{周} <span style=" color: #EE4000">{时}:{分}:{秒}</span></strong>，</span> <b>{城市}天气</b><span style=" color: #EE4000"> {天气} </span>{夜间气温}℃ ~ {白天气温}℃' });
+            </script>
             <div class="col-lg-9 ">@RenderBody()</div>
             <div class="col-lg-3 ">@RenderSection("SideNav", false)</div>
         </div>
@@ -84,6 +101,28 @@
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="/Content/neon/js/neon_text.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.anav-list').neonText();
+            $('.neon-1').neonText({
+                textColor: 'white',
+                textSize: '18pt',
+                neonHighlight: 'white',
+                neonHighlightColor: '#008000',
+                neonHighlightHover: '#FF6A6A',
+                neonFontHover: 'white'
+            });
+            $('.NOneon-logo').neonText({
+                textColor: 'white',
+                textSize: '25pt',
+                neonHighlight: '#E0E0E0',
+                neonHighlightColor: '#00FFFF',
+                neonHighlightHover: '#7FFF00',
+                neonFontHover: 'white'
+            });
+        });
+    </script>
 
 </body>
 <!--页脚版权声明-->
