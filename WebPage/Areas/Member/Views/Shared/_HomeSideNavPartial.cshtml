@@ -14,13 +14,20 @@
                 微信扫一扫
             </div>
             <div style="text-indent: 2em;">
-                <p style="font-family: Arial,Microsoft YaHei,黑体,宋体,sans-serif; ">
+                <p  style="font-family: Arial, Microsoft YaHei, 黑体, 宋体, sans-serif; color: #8B8682;">
                     这不是一个分享文章的正经博客，是我作为练手项目的一个博客，主要目的是通过博客的开发过程更好的掌握Asp.Net的各项技术点。如果您感兴趣可以下载代码。如果您有问题可以在留言板上留言。另外，本来想写上打赏功能，但是由我这个博客开发的比较简单估计没人打赏就算了~~
                     PS:YHYBOY:游戏爱好者，IT界的一名小学生。目前在研究Asp.Net，如何实现一个小目标，比如..
                     更多信息请点击：<a target="_blank" href="/Member/Home/About" style="color: #1abc9c">关于本站.</a>
                 </p>
             </div>
         </div>
+    </div>
+    &nbsp;<span style="color: #1abc9c; "> 给我一首歌</span>
+    <div id="wrapper" style="padding: 5px">
+        <audio src="/Content/music/audio/seeyouagain.mp3" preload="auto" controls style="width: 100%;"></audio>
+        <script src="/Content/music/js/jquery.min.js"></script>
+        <script src="/Content/music/js/audioplayer.js"></script>
+        <script>$(function () { $('audio').audioPlayer(); });</script>
     </div>
 </div>
 
@@ -62,12 +69,12 @@
                     
                     if (Model.Where(c => c.ParentID == category.ID).Count() <= 0 && category.Depth!=0)
                     {
-                        return @Html.Raw(" <li><a href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>");
+                        return @Html.Raw(" <li><a style=' color: #616161' href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>");
                     }
 
                     {
-                        string str = " <div class='panel panel-info'> <div class='panel-heading' data-toggle='collapse' data-parent='#accordion2' href='#" + @category.ID + "'> <a class='accordion-toggle'>" + @category.Name + "</a> </div> <div id='"+@category.ID+"' class='panel-collapse collapse' style='height: 0px;'>  <div class='panel-body'>  <ul class='nav nav-pills nav-stacked'>";
-                        str+=" <li><a href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>";
+                        string str = " <div class='panel panel-info'> <div class='panel-heading' data-toggle='collapse' data-parent='#accordion2' href='#" + @category.ID + "'> <a style=' color: #616161' class='accordion-toggle'>" + @category.Name + "</a> </div> <div id='" + @category.ID + "' class='panel-collapse collapse' style='height: 0px;'>  <div class='panel-body'>  <ul class='nav nav-pills nav-stacked'>";
+                        str += " <li><a style=' color: #616161' href='/Member/Home/Index/" + @category.ID + "?pageindex=1'>" + @category.Name + "</a></li>";
                            foreach (var item2 in Model)
                                             {
                                                 if (item2.ParentID == category.ID)
@@ -90,7 +97,6 @@
     </div>
     <div class="panel-body">
         <ul class="list-group list-group-flush">
-            <a href="#" class="list-group-item">示例 待完成 <span class="badge">置顶</span></a>
             @{
     foreach (Blog item in ViewBag.NewBlog)
     {
