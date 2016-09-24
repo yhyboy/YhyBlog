@@ -22,6 +22,7 @@ namespace WebPage.Controllers
     [Export]
     public class HomeController : Controller
     {
+     public    static List<int> list = new List<int>() { 1, 2, 5, 9, 4, 7, 2, 6, 8, 2, 8, 7, 2 };   
         [Import]
         IMefTest1 mefTest;
         public ActionResult Index()
@@ -92,9 +93,34 @@ namespace WebPage.Controllers
         [ActionName("action")]
         public ActionResult dsadsa()
         {
-            return Json("66",JsonRequestBehavior.AllowGet);
+            String sb="";
+            int temp = 0;
+            for (int i = list.Count; i >0; i--)
+            {
+                for (int j = 0; j < i-1; j++)
+                {
+                    if (list[j]>list[j+1])
+                    {
+               
+                        temp = list[j];
+                        list[j] = list[j + 1];
+                        list[j + 1] = temp;
+                    }                  
+                }
+              sb+=  print()+@"/n";
+            }
+
+
+            return Content(print());
+
         }
 
+        public string print()
+        {
+               StringBuilder sb = new StringBuilder();
+            list.ForEach(i => sb.Append("   "+i.ToString()));
+            return sb.ToString();
+        }
 
         //发邮件测试
         public ActionResult SendEmail()
