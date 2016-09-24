@@ -334,6 +334,23 @@
     <Content Include="Content\mansory\mp.mansory.js" />
     <Content Include="Content\mansory\mp.mansory.min.js" />
     <Content Include="Content\mansory\style.css" />
+    <Content Include="Content\music\audio\seeyouagain.mp3" />
+    <Content Include="Content\music\css\audioplayer.css" />
+    <Content Include="Content\music\css\default.css" />
+    <Content Include="Content\music\css\reset.css" />
+    <Content Include="Content\music\css\style.css" />
+    <Content Include="Content\music\data\audio.mp3" />
+    <Content Include="Content\music\fonts\icomoon.svg" />
+    <Content Include="Content\music\js\audioplayer.js" />
+    <Content Include="Content\music\js\jquery.min.js" />
+    <Content Include="Content\music\related\1.jpg" />
+    <Content Include="Content\music\related\2.jpg" />
+    <Content Include="Content\neon\css\htmleaf-demo.css" />
+    <Content Include="Content\neon\css\normalize.css" />
+    <Content Include="Content\neon\css\style.css" />
+    <Content Include="Content\neon\fonts\icomoon.svg" />
+    <Content Include="Content\neon\js\jquery-1.11.0.min.js" />
+    <Content Include="Content\neon\js\neon_text.js" />
     <Content Include="Content\Switch\dist\css\bootstrap2\bootstrap-switch.css" />
     <Content Include="Content\Switch\dist\css\bootstrap2\bootstrap-switch.min.css" />
     <Content Include="Content\Switch\dist\css\bootstrap3\bootstrap-switch.css" />
@@ -348,6 +365,7 @@
     <Content Include="Content\Switch\docs\js\highlight.js" />
     <Content Include="Content\Switch\docs\js\jquery.min.js" />
     <Content Include="Content\Switch\docs\js\main.js" />
+    <Content Include="Content\weather\weather.js" />
     <Content Include="Error.html" />
     <Content Include="lib\AutoMapper.dll" />
     <Content Include="ueditor\dialogs\anchor\anchor.html" />
@@ -702,6 +720,13 @@
     <Content Include="Areas\Member\Views\Home\DoLeaveMsg.cshtml" />
     <Content Include="Areas\Member\Views\User\Login.cshtml" />
     <Content Include="wx2.png" />
+    <Content Include="Content\music\fonts\icomoon.eot" />
+    <Content Include="Content\music\fonts\icomoon.ttf" />
+    <Content Include="Content\music\fonts\icomoon.woff" />
+    <Content Include="Content\music\js\jquery.min.map" />
+    <Content Include="Content\neon\fonts\icomoon.eot" />
+    <Content Include="Content\neon\fonts\icomoon.ttf" />
+    <Content Include="Content\neon\fonts\icomoon.woff" />
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -754,6 +779,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Home\Ueditor.cshtml" />
     <Content Include="Views\RedisTest\Index.cshtml" />
+    <Content Include="Views\Home\Music.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -762,6 +788,7 @@
     <Folder Include="Content\img\diy\" />
     <Folder Include="ueditor\net\upload\" />
     <Folder Include="ueditor\upload\file\" />
+    <Folder Include="Views\Action\" />
     <Folder Include="Views\Linq\" />
   </ItemGroup>
   <ItemGroup>

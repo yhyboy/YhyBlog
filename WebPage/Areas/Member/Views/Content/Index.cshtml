@@ -15,7 +15,7 @@
             <li class="active"></li>
         </ol>
         <a href="@Html.Raw("/Member/Content/Index/" + Model.ID)">
-            <h3 style="font-weight: bolder"> @Model.Title </h3>
+            <h3 style="font-weight: bolder; color: #616161"> @Model.Title </h3>
         </a>
         <div class="alert alert-success" role="alert">
             <h4>简介</h4>
@@ -23,7 +23,7 @@
                 @Html.Raw(Model.Summary)
             </p>
         </div>
-        <div style="font-size: 20px">
+        <div style="color: #4D4D4D; font-size: 20px">
             @Html.Raw(Model.Content)
         </div>
         <div>

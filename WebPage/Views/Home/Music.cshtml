@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Audio Player: Responsive and Touch-friendly demo by Osvaldas Valutis</title>
+
+    <link rel="stylesheet" href="/Content/music/css/reset.css" />
+    <link rel="stylesheet" type="/Content/music/text/css" href="/Content/music/css/default.css">
+    <link rel="stylesheet" href="/Content/music/css/style.css" />
+    <link rel="stylesheet" href="/Content/music/css/audioplayer.css"/>
+
+
+
+    <script>
+		(function(doc){var addEvent='addEventListener',type='gesturestart',qsa='querySelectorAll',scales=[1,1],meta=qsa in doc?doc[qsa]('meta[name=viewport]'):[];function fix(){meta.content='width=device-width,minimum-scale='+scales[0]+',maximum-scale='+scales[1];doc.removeEventListener(type,fix,true);}if((meta=meta[meta.length-1])&&addEvent in doc){fix();scales=[.25,1.6];doc[addEvent](type,fix,true);}}(document));
+    </script>
+    <!--[if IE]>
+        <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+
+
+<div id="wrapper">
+    <audio src="/Content/music/audio/seeyouagain.mp3" preload="auto" controls></audio>
+    <script src="/Content/music/js/jquery.min.js"></script>
+    <script src="/Content/music/js/audioplayer.js"></script>
+    <script>$(function() { $('audio').audioPlayer(); });</script>
+</div>
+</body>
+</html>

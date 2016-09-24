@@ -110,7 +110,7 @@
                     icon: "glyphicon glyphicon-plus",
                     label: "添加",
                     action: function (dialogItself) {
-                        if ($("form").valid()) {
+                       {
                             $.post($("form").attr("action"), $("form").serializeArray(), function (data) {
                                 if (data.Code == 1) {
                                     BootstrapDialog.show({
@@ -119,7 +119,7 @@
                                             icon: "glyphicon glyphicon-ok",
                                             label: "确定",
                                             action: function (dialogItself) {
-                                                $("#roletable").bootstrapTable("refresh");
+                                    
                                                 dialogItself.close();
                                                 addDialog.close();
                                                 location.reload(true);

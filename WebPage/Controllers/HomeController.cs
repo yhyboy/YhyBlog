@@ -10,6 +10,7 @@ using Infrastructure.Core.Data;
 using Infrastructure.Core.Data.Entity;
 using WebPage.Test;
 using System.ComponentModel.Composition.AttributedModel;
+using System.Linq.Expressions;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
@@ -262,6 +263,15 @@ namespace WebPage.Controllers
                 return 0;
             }
 
+        }
+        delegate decimal pref(decimal amount);
+        public ActionResult Music()
+        {
+
+           
+         
+
+            return View();
         }
     }
 }
