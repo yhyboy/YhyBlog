@@ -18,7 +18,6 @@
         text-align: center;
         padding: 25px;
     }
-
     p {
         font-weight: bolder;
     }
@@ -62,7 +61,7 @@
             foreach (var item in Model)
             {
                 <div class="item" data-order="@item.ID" style=" background-color: @(color_item.OrderBy(_ => Guid.NewGuid()).First()) ">
-            <p style=" color: @color_p.OrderBy(_ => Guid.NewGuid()).First() ">
+                      <p style=" color: @color_p.OrderBy(_ => Guid.NewGuid()).First()">
                     @item.Msg
                     </p>
                     - by @item.User.Name
@@ -111,7 +110,7 @@
                     icon: "glyphicon glyphicon-plus",
                     label: "添加",
                     action: function (dialogItself) {
-                        if ($("form").valid()) {
+                       {
                             $.post($("form").attr("action"), $("form").serializeArray(), function (data) {
                                 if (data.Code == 1) {
                                     BootstrapDialog.show({
@@ -120,7 +119,7 @@
                                             icon: "glyphicon glyphicon-ok",
                                             label: "确定",
                                             action: function (dialogItself) {
-                                                $("#roletable").bootstrapTable("refresh");
+                                    
                                                 dialogItself.close();
                                                 addDialog.close();
                                                 location.reload(true);

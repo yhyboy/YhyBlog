@@ -16,3 +16,17 @@ D:\git\www\blog\Infrastructure.Core\bin\Release\log4net.xml
 D:\git\www\blog\Infrastructure.Core\obj\Release\Infrastructure.Core.csprojResolveAssemblyReference.cache
 D:\git\www\blog\Infrastructure.Core\obj\Release\Infrastructure.Core.dll
 D:\git\www\blog\Infrastructure.Core\obj\Release\Infrastructure.Core.pdb
+D:\vsgit\Infrastructure.Core\bin\Release\Infrastructure.Core.dll
+D:\vsgit\Infrastructure.Core\bin\Release\Infrastructure.Core.pdb
+D:\vsgit\Infrastructure.Core\bin\Release\Common.dll
+D:\vsgit\Infrastructure.Core\bin\Release\log4net.dll
+D:\vsgit\Infrastructure.Core\bin\Release\ServiceStack.Redis.dll
+D:\vsgit\Infrastructure.Core\bin\Release\ServiceStack.Interfaces.dll
+D:\vsgit\Infrastructure.Core\bin\Release\ServiceStack.Text.dll
+D:\vsgit\Infrastructure.Core\bin\Release\Common.pdb
+D:\vsgit\Infrastructure.Core\bin\Release\log4net.xml
+D:\vsgit\Infrastructure.Core\bin\Release\ServiceStack.Redis.xml
+D:\vsgit\Infrastructure.Core\bin\Release\ServiceStack.Text.xml
+D:\vsgit\Infrastructure.Core\obj\Release\Infrastructure.Core.csprojResolveAssemblyReference.cache
+D:\vsgit\Infrastructure.Core\obj\Release\Infrastructure.Core.dll
+D:\vsgit\Infrastructure.Core\obj\Release\Infrastructure.Core.pdb
