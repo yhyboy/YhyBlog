@@ -72,3 +72,4 @@ D:\vsgit\Domain.Model\obj\Debug\Domain.Model.Migrations._915.resources
 D:\vsgit\Domain.Model\obj\Debug\Domain.Model.csproj.GenerateResource.Cache
 D:\vsgit\Domain.Model\obj\Debug\Domain.Model.dll
 D:\vsgit\Domain.Model\obj\Debug\Domain.Model.pdb
+D:\vsgit\Domain.Model\obj\Debug\Domain.Model.Migrations.up11.resources

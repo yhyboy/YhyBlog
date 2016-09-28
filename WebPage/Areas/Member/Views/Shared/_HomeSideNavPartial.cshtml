@@ -11,10 +11,10 @@
         <div>
             <div style="width: 150px; text-align: center; font-size: 14px; float: left;">
                 <img id="wxlook" class="img-responsive" style="margin-right: 5px" width="145" height="145" alt="微信扫一扫" title="打开微信扫一扫" src="~/BlogImg/MyWx.png" data-bd-imgshare-binded="1">
-                微信扫一扫
+               <span style="color: #4D4D4D">微信扫一扫</span> 
             </div>
             <div style="text-indent: 2em;">
-                <p  style="font-family: Arial, Microsoft YaHei, 黑体, 宋体, sans-serif; color: #8B8682;">
+                <p  style="font-family: Arial, Microsoft YaHei, 黑体, 宋体, sans-serif; color: #545454;">
                     这不是一个分享文章的正经博客，是我作为练手项目的一个博客，主要目的是通过博客的开发过程更好的掌握Asp.Net的各项技术点。如果您感兴趣可以下载代码。如果您有问题可以在留言板上留言。另外，本来想写上打赏功能，但是由我这个博客开发的比较简单估计没人打赏就算了~~
                     PS:YHYBOY:游戏爱好者，IT界的一名小学生。目前在研究Asp.Net，如何实现一个小目标，比如..
                     更多信息请点击：<a target="_blank" href="/Member/Home/About" style="color: #1abc9c">关于本站.</a>
@@ -40,7 +40,7 @@
             @{
                 foreach (Blog item in ViewBag.ReadBlog)
                 {
-                    <a style="font-weight: bolder" href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title  <span style="font-weight: bolder">(@item.Volume)</span></a>
+                    <a style="font-weight: bolder; color: #4D4D4D; " href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title  <span style="font-weight: bolder; color: #4876FF; ">(@item.Volume)</span></a>
                 }
             }
         </ul>
@@ -100,7 +100,9 @@
             @{
     foreach (Blog item in ViewBag.NewBlog)
     {
-        <a style="font-weight: bolder" href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title </a>
+        <a >
+            <a style="font-weight: bolder" href="@Html.Raw("/Member/Content/Index/" + item.ID)" class="list-group-item">@item.Title <br/> <span style="color: #616161"> - @item.CreateTime.Year 年 @item.CreateTime.Month 月 @item.CreateTime.Day 日</span></a>
+        </a>
     }
 }
         </ul>

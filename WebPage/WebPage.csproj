@@ -280,6 +280,7 @@
     <Compile Include="Test\Map1.cs" />
     <Compile Include="Test\Map2.cs" />
     <Compile Include="Test\MefTest1.cs" />
+    <Compile Include="Test\TestAttribute.cs" />
     <Compile Include="ueditor\net\App_Code\Config.cs" />
     <Compile Include="ueditor\net\App_Code\ConfigHandler.cs" />
     <Compile Include="ueditor\net\App_Code\CrawlerHandler.cs" />
@@ -317,6 +318,13 @@
     <EmbeddedResource Include="Config\RedisConfig.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <Content Include="Content\bg\Full-background-webdevtuts\full-background-slideshow-example.html" />
+    <Content Include="Content\bg\Full-background-webdevtuts\images\image1.jpg" />
+    <Content Include="Content\bg\Full-background-webdevtuts\images\image2.JPG" />
+    <Content Include="Content\bg\Full-background-webdevtuts\images\image3.jpg" />
+    <Content Include="Content\bg\Full-background-webdevtuts\js\jquery-1.2.6.min.js" />
+    <Content Include="Content\bg\Full-background-webdevtuts\js\jquery.fullscreenr.js" />
+    <Content Include="Content\bg\Full-background-webdevtuts\style.css" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-dialog.css" />
@@ -753,7 +761,9 @@
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
     <Content Include="timg.jpg" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

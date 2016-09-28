@@ -6,6 +6,9 @@ using System.Web.Mvc;
 using Domain.Core;
 using Domain.Core.Category;
 using Domain.Model;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using WebGrease.Css.Extensions;
 
 namespace WebPage.Controllers
 {
@@ -30,6 +33,7 @@ namespace WebPage.Controllers
                         join c in db.Categories on  b.Category.Name equals c.Name     
                          select new { b .ID,b.Publish,栏目ID=c.ID};
 
+         
             var result16 = db.Blogs.Join(db.Categories, b => b.Category.ID, c => c.ID, (b, c) => new{类型=c.Name,博客名称=b.Title}).ToList();
             //分组  注意泛型
             var result12 = db.Blogs.GroupBy(b => b.Category.Name).Select(a => new {aa=a.Select(bs=>bs.Category.Name),count=a.Count()}).ToList();
@@ -43,8 +47,16 @@ namespace WebPage.Controllers
                 select new {b.Category.Name}).Distinct();//.SUM.MAX...
 
 
+            string json1 = JsonConvert.SerializeObject(result1);
 
 
+
+
+            JArray jsArray = JArray.Parse(json1);
+            string jss = "";
+           // jsArray.ForEach(j => jss = jss+j.Value<string>()+"||");
+
+            return Content(jss);
             return Json(result16, JsonRequestBehavior.AllowGet);
         }
     }

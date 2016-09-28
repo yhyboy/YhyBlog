@@ -15,7 +15,7 @@
     <title></title>
 </head>
 <body>
-    <div>
+    <div id="Content2">
         @{
             if ((Blog)ViewBag.TopBlog != null)
             {
@@ -29,11 +29,12 @@
                     </div>
                     <div class="panel-body">
                         <br />
-                        <div style="color: #8B8378;">
+                        <div style="color: #333333; ">
                             <div class="alert alert-success" role="alert">
                                 <h4>简介</h4>
-                                <p>
-                                    @Html.Raw(((Blog)ViewBag.TopBlog).Summary)
+                                <p style="color: #121212; font-size: 20px;">
+                                    
+                                    @Html.Raw(((Blog) ViewBag.TopBlog).Summary)
                                 </p>
                             </div>
                         </div>
@@ -78,7 +79,7 @@
                         <br />
                         <div style="color: #8B8378;">
                             <h4>简介</h4>
-                            <p>
+                            <p style="color: #121212; font-size: 18px;">
                                 @Html.Raw(@item.Summary)
                             </p>
                         </div>

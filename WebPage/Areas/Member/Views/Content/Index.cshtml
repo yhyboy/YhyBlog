@@ -8,13 +8,10 @@
 }
 <style type="text/css">
 
-    pre {
-        /*font-family: "Times New Roman",Georgia,Serif;*/
-    }
     p {
         font-family: "Times New Roman", Georgia, Serif;
-        color: #4D4D4D;
-        font-size: 15px;
+        color: #121212;
+        font-size: 20px;
     }
 
 </style>
@@ -25,7 +22,7 @@
 <script type="text/javascript">
     SyntaxHighlighter.all();
 </script>
-<div class="panel panel-default">
+<div class="panel panel-success">
     <div class="panel-body">
         <ol class="breadcrumb">
             <li><span class="glyphicon glyphicon-home"></span><a style="color: #EE6363; font-weight: bolder" href="@Html.Raw("/Member/Home/Index")"> @(((WebInfo)ViewBag.WebInfo).BlogName)</a></li>
@@ -37,11 +34,12 @@
         </a>
         <div class="alert alert-success" role="alert">
             <h4>简介</h4>
-            <p>
+            <p style="color: #121212; font-size: 20px;">
+                
                 @Html.Raw(Model.Summary)
             </p>
         </div>
-        <div >
+        <div>
             @Html.Raw(Model.Content)
         </div>
         <div>
@@ -49,7 +47,7 @@
         </div>
     </div>
     <div class="panel-footer">
-        <div style="color: #8B8378;">
+        <div style="color: #4D4D4D;">
             &nbsp <img src=" http://www.zynblog.com/Content/images/ico_time.png" alt="Alternate Text" /> @Model.CreateTime <img src=" http://www.zynblog.com/Content/images/ico_eye.png" alt="Alternate Text" /> 浏览（@Model.Volume）<img src=" http://www.zynblog.com/Content/images/ico_praise.png" alt="Alternate Text" />（206）
         </div>
     </div>
