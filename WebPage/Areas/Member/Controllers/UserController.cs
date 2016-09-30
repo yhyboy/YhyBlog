@@ -55,6 +55,7 @@ namespace WebPage.Areas.Member.Controllers
                 {
                     User user = (User)_response.Data;
                     CurrUser.Serialize(user.ID, user.Username);
+
                     return RedirectToAction("Index", "Home", new { Areas = "Member" });
                 }
                 else if (_response.Code == 2) ModelState.AddModelError("Accounts", _response.Message);
