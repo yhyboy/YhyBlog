@@ -15,6 +15,7 @@ using Domain.Core.User;
 using Domain.Model;
 using Domain.Model.Blog;
 using Domain.Model.Category;
+using WebPage.Filter;
 
 namespace WebPage.Areas.Member.Controllers
 {
@@ -29,6 +30,8 @@ namespace WebPage.Areas.Member.Controllers
         private WebConfigManager webConfigManager=new WebConfigManager();
         //
         // GET: /Member/Home/
+        //记录访问数目
+        [MViewAttribute]
         public ActionResult Index(int? pageindex, int id = -1)
         {
             Paging<Blog> page = new Paging<Blog>();
