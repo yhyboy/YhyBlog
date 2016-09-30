@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="yhblog" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\git\\www\\blog\\WebPage\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\git\\www\\blog\\WebPage\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^D:\\vsgit\\WebPage\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^D:\\vsgit\\WebPage\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
   <parameter name="YhDeboke-Web.config Connection String" description="" value="Data Source=.;Database=wodeboke;UID=sa;PWD=123456;" tags="">
-    <parameterEntry kind="XmlFile" scope="D:\\git\\www\\blog\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='YhDeboke']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\vsgit\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='YhDeboke']/@connectionString" />
   </parameter>
   <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection 由应用程序在 web.config 中用来访问数据库的连接字符串。" value="Data Source=(LocalDb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-WebPage-20160816111529.mdf;Initial Catalog=aspnet-WebPage-20160816111529;Integrated Security=True" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="D:\\git\\www\\blog\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="D:\\vsgit\\WebPage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
   </parameter>
 </parameters>

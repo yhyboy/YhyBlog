@@ -267,6 +267,7 @@
     <Compile Include="Controllers\LinqController.cs" />
     <Compile Include="Controllers\RedisTestController.cs" />
     <Compile Include="Filter\ExceptionAttribute.cs" />
+    <Compile Include="Filter\MViewAttribute.cs" />
     <Compile Include="Odt\Configuration.cs" />
     <Compile Include="Odt\Profiles\AddBlog_Blog.cs" />
     <Compile Include="Odt\Profiles\AddUser_User.cs" />
@@ -336,6 +337,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Control.css" />
+    <Content Include="Content\css3HoverAnimation\css\style.css" />
+    <Content Include="Content\css3HoverAnimation\index.html" />
+    <Content Include="Content\css3HoverAnimation\js\jquery-2.1.1.min.js" />
+    <Content Include="Content\css3HoverAnimation\js\modernizr.js" />
+    <Content Include="Content\css3HoverAnimation\www.jq22.com.txt" />
     <Content Include="Content\Images\folder.png" />
     <Content Include="Content\Images\link.png" />
     <Content Include="Content\Images\page.png" />
@@ -735,6 +741,7 @@
     <Content Include="Content\neon\fonts\icomoon.eot" />
     <Content Include="Content\neon\fonts\icomoon.ttf" />
     <Content Include="Content\neon\fonts\icomoon.woff" />
+    <Content Include="Content\css3HoverAnimation\jquery插件库.url" />
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

@@ -54,6 +54,10 @@ namespace Domain.Core.User
           }
           else if (user.Password == password)
           {
+             
+              user.LastLoginTime=DateTime.Now;
+              Repository.Update(user);
+              IUnitOfWork.Commit();
               _resp.Code = 1;
               _resp.Data = user;
               _resp.Message = "验证通过";
