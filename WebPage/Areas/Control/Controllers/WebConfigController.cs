@@ -127,7 +127,7 @@ namespace WebPage.Areas.Control.Controllers
            var timnAxis= ItimnAxisManager.Find(id);
            if (timnAxis==null)
            {
-               return Json("该角色已经不存在",JsonRequestBehavior.AllowGet);
+               return Json("已经不存在",JsonRequestBehavior.AllowGet);
            }
            return PartialView(timnAxis);
         }
