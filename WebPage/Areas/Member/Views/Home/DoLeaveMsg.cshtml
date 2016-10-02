@@ -3,6 +3,7 @@
 
 @using (Html.BeginForm("DoLeaveMsg", "Home", FormMethod.Post))
 {
+    
     @Html.AntiForgeryToken()
     <div class="form-horizontal">
         <div class="form-group">
@@ -10,6 +11,7 @@
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.Msg, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Msg, "", new { @class = "text-danger" })
+                1
             </div>
         </div>       
     </div>
