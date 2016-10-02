@@ -1,0 +1,52 @@
+﻿@model  List<Domain.Model.Blog.TimnAxis>
+@{
+    ViewBag.Title = "历程";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+
+@section style
+{
+    <link rel="stylesheet" type="text/css" href="/Content/timeaxis/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/timeaxis/css/component.css" />
+}
+@section scripts
+{
+    <script src="/Content/timeaxis/js/modernizr.custom.js"></script>
+}
+@section SideNav{@Html.Action("_HomeSideNavPartial", "Side")}
+<h2>TimnAxis</h2>
+
+<div class="main ">
+    <ul class="cbp_tmtimeline">
+        @{
+            foreach (var item in Model)
+            {
+                <li>
+                    <time class="cbp_tmtime" datetime="2013-04-18 09:56">
+                        <span style="font-size: 20px">
+                            @item.Time.ToString("yyyy/MM/dd")
+                        </span> <span style="font-size: 25px">@item.Time.Hour :@item.Time.Minute</span>
+                    </time>
+                    <div class="cbp_tmicon cbp_tmicon-phone"></div>
+                    <div class="cbp_tmlabel">
+                        <h2>@item.Title</h2>
+                        <p>
+                            @item.Content
+                        </p>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>
+@{
+    if (Model.Count == 30)
+    {
+        <a style="float: right;font-size: 15px" href="@Url.Action("TimnAxis","Home",new{isAll=true})"> 查看所有</a>
+    }
+
+}
+
+
+
+

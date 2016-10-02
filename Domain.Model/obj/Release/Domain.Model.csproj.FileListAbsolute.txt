@@ -61,10 +61,7 @@ D:\vsgit\Domain.Model\bin\Release\ServiceStack.Text.xml
 D:\vsgit\Domain.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
 D:\vsgit\Domain.Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
 D:\vsgit\Domain.Model\obj\Release\Domain.Model.csprojResolveAssemblyReference.cache
-D:\vsgit\Domain.Model\obj\Release\Domain.Model.Migrations._2.resources
-D:\vsgit\Domain.Model\obj\Release\Domain.Model.Migrations._910.resources
-D:\vsgit\Domain.Model\obj\Release\Domain.Model.Migrations._915.resources
 D:\vsgit\Domain.Model\obj\Release\Domain.Model.csproj.GenerateResource.Cache
 D:\vsgit\Domain.Model\obj\Release\Domain.Model.dll
 D:\vsgit\Domain.Model\obj\Release\Domain.Model.pdb
-D:\vsgit\Domain.Model\obj\Release\Domain.Model.Migrations.up11.resources
+D:\vsgit\Domain.Model\obj\Release\Domain.Model.Migrations.addTimnAxis.resources

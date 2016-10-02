@@ -4,7 +4,7 @@
 }
 @section SideNav{@Html.Partial("_BlogSideNavPartial")}
 <ol class="breadcrumb">
-    <li><span class="glyphicon glyphicon-home"></span>博客管理</li>
+    <li><span class="glyphicon glyphicon-home"></span>@Html.ActionLink("博客管理", "Index")</li>
     <li class="active">@Html.ActionLink("博客列表", "Index")</li>
 </ol>
 <table id="blogtable"></table>

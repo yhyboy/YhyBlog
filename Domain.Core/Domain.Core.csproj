@@ -58,6 +58,7 @@
     <Compile Include="Content\ContentTypeManager.cs" />
     <Compile Include="LeaveMsgManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimnAxisManager.cs" />
     <Compile Include="User\AdminManager.cs" />
     <Compile Include="User\RoleManager.cs" />
     <Compile Include="User\UserManager.cs" />

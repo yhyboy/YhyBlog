@@ -6,6 +6,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="gb2312">
+    <meta name="keywords" content="个人博客,yhyboy的个人博客,个人博客开发,yhyboy" />
+    <meta name="description" content="yhyboy的个人博客，是一个90后的个人网站。" />
+    <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title </title>
     @Styles.Render("~/Content/Control")
     @RenderSection("style", required: false)
@@ -24,7 +28,7 @@
             background-image: url("/Content/bg/Full-background-webdevtuts/images/image1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
-            font: 12px/1.5 Tahoma,Helvetica,Arial,'宋体',sans-serif;
+            font: 12px/1.5 Tahoma, Helvetica, Arial, '宋体', sans-serif;
         }
 
         #Content .panel {
@@ -47,6 +51,9 @@
             background: #F0FFFF;
         }
     </style>
+
+  
+
 </head>
 <body>
     <div class="navbar navbar-default navbar-fixed-top" style="background: #04477C !important;">
@@ -70,6 +77,9 @@
                     </li>
                     <li class="dropdown">
                         <a class="neon-1" style="color: #FFFFF0" href="/Member/Home/LeaveMsg"><span class="glyphicon glyphicon-heart-empty"></span> 留言 </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="neon-1" style="color: #FFFFF0" href="@Url.Action("TimnAxis","Home")"><span class="glyphicon  glyphicon-time"></span> 历程 </a>
                     </li>
 
                     @{

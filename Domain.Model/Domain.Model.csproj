@@ -52,27 +52,16 @@
     <Compile Include="BlogConfig.cs" />
     <Compile Include="Blog\Blog.cs" />
     <Compile Include="Blog\LeaveMsg.cs" />
+    <Compile Include="Blog\TimnAxis.cs" />
     <Compile Include="Category\Category.cs" />
     <Compile Include="Category\CategoryGeneral.cs" />
     <Compile Include="Category\CategoryLink.cs" />
     <Compile Include="Category\CategoryPage.cs" />
     <Compile Include="Category\CategoryType.cs" />
     <Compile Include="Content\ContentType.cs" />
-    <Compile Include="Migrations\201609071424523_2.cs" />
-    <Compile Include="Migrations\201609071424523_2.Designer.cs">
-      <DependentUpon>201609071424523_2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609100753586_910.cs" />
-    <Compile Include="Migrations\201609100753586_910.Designer.cs">
-      <DependentUpon>201609100753586_910.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609141620020_915.cs" />
-    <Compile Include="Migrations\201609141620020_915.Designer.cs">
-      <DependentUpon>201609141620020_915.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201609271153127_up11.cs" />
-    <Compile Include="Migrations\201609271153127_up11.Designer.cs">
-      <DependentUpon>201609271153127_up11.cs</DependentUpon>
+    <Compile Include="Migrations\201610011748427_addTimnAxis.cs" />
+    <Compile Include="Migrations\201610011748427_addTimnAxis.Designer.cs">
+      <DependentUpon>201610011748427_addTimnAxis.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,17 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201609071424523_2.resx">
-      <DependentUpon>201609071424523_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609100753586_910.resx">
-      <DependentUpon>201609100753586_910.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609141620020_915.resx">
-      <DependentUpon>201609141620020_915.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201609271153127_up11.resx">
-      <DependentUpon>201609271153127_up11.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610011748427_addTimnAxis.resx">
+      <DependentUpon>201610011748427_addTimnAxis.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

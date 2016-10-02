@@ -5,20 +5,22 @@
     Layout = "~/Areas/Control/Views/Shared/_LayoutControl.cshtml";
 }
 @section SideNav{@Html.Partial("_ConfigSideNavPartial")}
-
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>@Html.ActionLink("网站设置", "Index", "WebConfig")</li>
+    <li class="active">@Html.ActionLink("基本设置", "Index", "WebConfig")</li>
+</ol>
 <div class="form-horizontal">
     <div class="form-group">
         @Html.LabelFor(m => m.TopBlog, new { @class = "col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(model => model.TopBlog, new { @class = "form-control" })
+        <div class="col-md-2">
+            @Html.TextBoxFor(model => model.TopBlog, new {@class = "form-control", style = "display:inline"})
             <a id="T_btn" type="button" class="btn btn-success" style="color: beige">修改</a>
-            @Html.ValidationMessageFor(model => model.TopBlog, "", new { @class = "text-danger" })
+            @Html.ValidationMessageFor(model => model.TopBlog, "", new {@class = "text-danger"})
         </div>
-    </div>
-    <div class="form-group">
+
         @Html.LabelFor(m => m.MyInfo, new { @class = "col-md-2" })
-        <div class="col-md-10">
-            @Html.TextAreaFor(model => model.MyInfo, new { @class = "form-control", style = "height: 150px" })
+        <div class="col-md-6">
+            @Html.TextAreaFor(model => model.MyInfo, new { @class = "form-control", style = "height: 150px;width: 100%;display:inline" })
             <a id="I_btn" type="button" class="btn btn-success" style="color: beige">修改</a>
             @Html.ValidationMessageFor(model => model.MyInfo, "", new { @class = "text-danger" })
         </div>
@@ -28,14 +30,9 @@
         <div class="col-md-10">
             @{
                 foreach (var link in Model.Links)
-                {
-                    <div class="form-group">
-                        1
-                        <div class="col-md-10">
-                            名称 : @link.LinkName 链接 : <a target="_blank" href="@link.Href">@link.Href</a>
-                            <hr />
-                        </div>
-                    </div>
+                {                                                       
+                            <span>名称:</span>  @link.LinkName <span>链接:</span>  <a target="_blank" href="@link.Href">@link.Href</a>
+                            <hr />                                         
                 }
             }
             <span style="color: red">链接需要修改在配置文件中自行修改</span>

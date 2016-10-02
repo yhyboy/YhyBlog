@@ -65,9 +65,6 @@ namespace Domain.Model
        /// 内容类型
        /// </summary>
        public DbSet<Content.ContentType> ContentTypes { get; set; }
-
-
-
        #endregion
 
        #region 博客文章
@@ -75,7 +72,13 @@ namespace Domain.Model
        public DbSet<Blog.Blog> Blogs { get; set; }
 
        public DbSet<Blog.LeaveMsg> LeaveMsg { get; set; }
-#endregion
+
+       public DbSet<Blog.TimnAxis> TimnAxis { get; set; }
+
+       #endregion
+
+
+
 
        public int Commit()
        {

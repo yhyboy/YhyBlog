@@ -47,6 +47,7 @@
     <Compile Include="ICategory\ICategoryManager.cs" />
     <Compile Include="ICategory\ICategoryPageManager.cs" />
     <Compile Include="ILeaveMsgManager.cs" />
+    <Compile Include="ITimnAxisManager.cs" />
     <Compile Include="IUser\IAdminManager.cs" />
     <Compile Include="IUser\IRoleManager.cs" />
     <Compile Include="IUser\IUserManager.cs" />

@@ -26,8 +26,14 @@ namespace WebPage.Areas.Member.Controllers
         private IBlogManager blogManager;
         [Import]
         private ILeaveMsgManager leaveMsgManager;
+        [Import]
+        private ITimnAxisManager ItimnAxisManager;
 
         private WebConfigManager webConfigManager=new WebConfigManager();
+
+        
+         static CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
+         static WebInfo webInfo = custom.WebInfo;
         //
         // GET: /Member/Home/
         //记录访问数目
@@ -69,8 +75,8 @@ namespace WebPage.Areas.Member.Controllers
             #endregion
 
             #region 网站设置
-            CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
-            WebInfo webInfo = custom.WebInfo;
+            //CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
+            //WebInfo webInfo = custom.WebInfo;
             ViewBag.WebInfo = webInfo;
             #endregion
 
@@ -90,8 +96,8 @@ namespace WebPage.Areas.Member.Controllers
         public ActionResult About()
         {
             #region 网站设置
-            CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
-            WebInfo webInfo = custom.WebInfo;
+            //CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
+            //WebInfo webInfo = custom.WebInfo;
             ViewBag.WebInfo = webInfo;
             #endregion
 
@@ -101,8 +107,8 @@ namespace WebPage.Areas.Member.Controllers
         public ActionResult LeaveMsg()
         {
             #region 网站设置
-            CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
-            WebInfo webInfo = custom.WebInfo;
+            //CustomCon custom = (CustomCon)ConfigurationManager.GetSection("customCon");
+            //WebInfo webInfo = custom.WebInfo;
             ViewBag.WebInfo = webInfo;
             #endregion
 
@@ -150,7 +156,23 @@ namespace WebPage.Areas.Member.Controllers
         public ActionResult Out()
         {
             CurrUser.Exit();
-            return RedirectToAction("Index", "Home", new { Areas = "Member" });
+            return RedirectToAction("Index", "Home", new { Area = "Member" });
         }
+        [HttpGet]
+        public ActionResult TimnAxis(bool isAll=false)
+        {
+            ViewBag.WebInfo = webInfo;
+            List<TimnAxis> timnAxises=new List<TimnAxis>();
+            if (isAll)
+            {
+               timnAxises = ItimnAxisManager.FindList().OrderBy(t => t.Time).ToList();
+            }
+            else
+            {
+                timnAxises = ItimnAxisManager.FindList().OrderBy(t => t.Time).Take(30).ToList();
+            }   
+            return View(timnAxises);
+        }
+
     }
 }
