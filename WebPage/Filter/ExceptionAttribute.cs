@@ -25,9 +25,8 @@ namespace WebPage.Filter
             {
                 string controllerName = (string)filterContext.RouteData.Values["controller"];
                 string actionName = (string)filterContext.RouteData.Values["action"];
-                string msg = filterContext.Exception.Message +
-                (string.IsNullOrEmpty(filterContext.Exception.InnerException.Message) ?
-                             "" : filterContext.Exception.InnerException.Message);
+                string msg = filterContext.Exception.Message;
+       
                 log.Error(Utils.GetIP(), CurrUser.UserName, "", controllerName + "/" + actionName, msg);
             }
 

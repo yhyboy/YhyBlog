@@ -16,6 +16,7 @@ using System.Net.Mail;
 using System.Text;
 using System.Xml.Linq;
 using AutoMapper;
+using UnitTest;
 using WebPage.Odt;
 
 namespace WebPage.Controllers
@@ -268,5 +269,14 @@ namespace WebPage.Controllers
 
 //            return View();
 //        }
+
+        public ActionResult test()
+        {
+            UnitTest1 unitTest1 = new UnitTest1();
+
+            unitTest1.TestMethod1();
+            return Content("");
+        }
+
     }
 }

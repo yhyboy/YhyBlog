@@ -799,6 +799,7 @@
     <Content Include="Content\datetimepicker\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="log4net.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Properties\PublishProfiles\yh.pubxml" />
     <None Include="Scripts\jquery-1.12.0.intellisense.js" />
@@ -895,6 +896,10 @@
     <ProjectReference Include="..\Infrastructure.Core\Infrastructure.Core.csproj">
       <Project>{8d4a51ae-f098-4185-b2d2-78baa0da92c0}</Project>
       <Name>Infrastructure.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTest\UnitTest.csproj">
+      <Project>{321ec6bb-8157-4f37-acbe-a884cdd33580}</Project>
+      <Name>UnitTest</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
